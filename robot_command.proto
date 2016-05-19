@@ -1,6 +1,11 @@
 message RobotCommand {
-  required uint32             frame_number  = 1;
-  required double             t_capture     = 2;
-  required double             t_sent        = 3;
-  required uint32             camera_id     = 4;
+  required uint32     robot_id      = 1;
+  required float      shoot         = 2;
+  required float      chip          = 3;
+  required float      dribbler      = 4;
+  required bool       halt          = 5;
+  required float      vx            = 6;
+  required float      vy            = 7;
+  required float      omega         = 8;
+  required float      orientation   = 9;
 }
