@@ -1,0 +1,85 @@
+package Immortals.WorldState;
+
+message Vector2f {
+	required float x = 1;
+	required float y = 2;
+}
+
+message Vector3f {
+	required float x = 1;
+	required float y = 2;
+	required float z = 3;
+}
+
+enum SeenState {
+	Seen = 0;
+	CompletelyOut = 1;
+	TemporarilyOut = 2;
+}
+
+enum TeamColor {
+	Blue = 0;
+	Yellow = 1;
+}
+
+message BallState {
+	required uint32 id = 1;
+	required Vector3f position = 2;
+	required Vector3f velocity = 3;
+}
+
+message RobotState {
+	required uint32 id = 1;
+	required TeamColor color = 2;
+	required Vector2f position = 3;
+	required Vector2f velocity = 4;
+	required float orientation = 5;
+	required float omega = 6;
+	optional bool OutForSubsitute = 7;
+}
+
+enum Stage {
+	NORMAL_FIRST_HALF_PRE = 0;
+	NORMAL_FIRST_HALF = 1;
+	NORMAL_HALF_TIME = 2;
+	NORMAL_SECOND_HALF_PRE = 3;
+	NORMAL_SECOND_HALF = 4;
+	EXTRA_TIME_BREAK = 5;
+	EXTRA_FIRST_HALF_PRE = 6;
+	EXTRA_FIRST_HALF = 7;
+	EXTRA_HALF_TIME = 8;
+	EXTRA_SECOND_HALF_PRE = 9;
+	EXTRA_SECOND_HALF = 10;
+	PENALTY_SHOOTOUT_BREAK = 11;
+	PENALTY_SHOOTOUT = 12;
+	POST_GAME = 13;
+}
+
+message TeamInfo {
+	required string name = 1;
+	required uint32 score = 2;
+	required uint32 redCards = 3;
+	repeated uint32 yellowCardTimes = 4 [packed=true];
+	required uint32 yellowCards = 5;
+	required uint32 timeoutsLeft = 6;
+	required uint32 timeoutTimeLeft = 7;
+	required uint32 goalie = 8;
+}
+
+message RefereeState {
+	required int32 state = 1;
+	required Stage stage = 2;
+	optional sint32 stageTimeLeft = 3;
+	required TeamInfo yellow = 4;
+	required TeamInfo blue = 5;
+}
+
+message WorldState {
+	required uint64 id = 1;
+	required uint64 timestamp = 2;
+	optional BallState ball = 3;
+	repeated BallState balls = 4;
+	repeated RobotState ownRobots = 5;
+	repeated RobotState oppRobot = 6;
+	optional RefereeState referee = 7;
+}
