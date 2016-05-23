@@ -1,0 +1,22 @@
+package Immortals.Data;
+
+message Vector2f {
+	required float x = 1;
+	required float y = 2;
+}
+
+message Vector3f {
+	required float x = 1;
+	required float y = 2;
+	required float z = 3;
+}
+
+enum TeamColor {
+	Blue = 0;
+	Yellow = 1;
+}
+
+enum FieldSide {
+	Right = 1;
+	Left = 2;
+}

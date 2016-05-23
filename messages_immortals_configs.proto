@@ -1,0 +1,29 @@
+import "messages_immortals_common.proto";
+
+package Immortals.Data;
+
+message VisionConfig {
+	required  TeamColor  ourColor            = 1;
+	required  string     visionAddress       = 2;
+	required  uint32     visionPort          = 3;
+	required  string     zeroAddr            = 4;
+	repeated  bool       cameraEnabled       = 5;
+	required  uint32     cameraCount         = 6 [deprecated = true];
+	required  float      predictSteps        = 7;
+	required  uint32     maxBalls            = 8;
+	required  uint32     maxBallNotSeen      = 9;
+	required  uint32     maxRobots           = 10;
+	required  uint32     maxRobotNotSeen     = 11;
+	required  uint32     maxRobotSubsitute   = 12;
+	required  float      mergeDistance       = 13;
+	required  uint32     ballBufferFrames    = 14;
+	required  float      ignorePrediction    = 15;
+	required  float      ballErrorVelocity   = 16;
+	required  float      robotErrorVelocity  = 17;
+	required  float      maxBall2FramesDis   = 18;
+}
+
+message GameCongif {
+	required VisionConfig visionConfig = 1;
+	required FieldSide side = 2;
+}
