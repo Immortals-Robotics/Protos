@@ -17,7 +17,9 @@ message VisionConfig {
 	required  uint32     max_robot_subsitute     = 12;
 	required  float      merge_distance          = 13;
 	required  uint32     ball_buffer_frames      = 14;
+	// Don't add prediction to Ball or Opponents if both velocities are below this threshold
 	required  float      ignore_prediction       = 15;
+	// If the filtering process yields velocities above these values, reset the filter state
 	required  float      ball_error_velocity     = 16;
 	required  float      robot_error_velocity    = 17;
 	required  float      max_ball_2_frames_dis   = 18;
