@@ -1,25 +1,39 @@
-message PID {
-	required float P = 1;
-	required float I = 2;
-	required float D = 3;
-}
-
-message Constans {
-	optional float gyro_offset = 1;
-	optional uint32 button_status = 2;
-	optional PID pid = 3;
-}
-
 message RobotFeedback {
-  required uint32	robot_id		=  1;
-  optional float	battery_voltage	=  2;
-  optional float	cap_voltage		=  3;
-  optional bool		dribbe_connected=  4;
-  optional bool		ball_detected	=  5;
-  repeated bool		motor_fault		=  6;
-  repeated bool		encoder_fault	=  7;
-  optional bool		gyro_yaw		=  8;
-  repeated float 	motor_vel		=  9;
-  repeated float 	motor_set_point	=  10;
-  optional PID		pid				=  11; 
+  required  uint32  robot_id            =  1;
+
+  optional  float	  battery_voltage     =  2;
+  optional  float   capacitor_voltage   =  3;
+
+  optional  bool    ball_detected       =  4;
+
+  optional  float   omega               =  5;
+  optional  float   orientation         =  6;
+
+  repeated  bool    encoder_fault       =  7;
+  repeated  bool    motor_fault         =  8;
+  repeated  float   motor_velocity      =  9;
+  repeated  float   motor_target        =  10;
+  
+  repeated  bool    button_status       =  11;
+  optional  bool    booster_enable      =  12;
+  optional  bool    dribbler_connected  =  13;
+
+  // config
+  optional float    kp                  =  14;
+  optional float    ki                  =  15;
+  optional float    kd                  =  16;
+  optional float    i_limit             =  17;
+  
+  optional float    gyro_offset         =  18;
+  optional float    head_offset         =  19;
+  
+  optional float    shoot_a             =  20;
+  optional float    shoot_b             =  21;
+  optional float    shoot_c             =  22;
+
+  optional float    chip_a              =  23;
+  optional float    chip_b              =  24;
+  optional float    chip_c              =  25;
+
+  optional bytes    debug_dump          =  26;
 }

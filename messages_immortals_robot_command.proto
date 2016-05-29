@@ -1,11 +1,37 @@
 message RobotCommand {
-  required uint32     robot_id      = 1;
-  required float      shoot         = 2;
-  required float      chip          = 3;
-  required float      dribbler      = 4;
-  required bool       halt          = 5;
-  required float      vx            = 6;
-  required float      vy            = 7;
-  required float      omega         = 8;
-  required float      orientation   = 9;
+  required uint32     robot_id            = 1;
+
+  // commands
+  optional float      vx                  = 2;
+  optional float      vy                  = 3;
+  optional float      omega               = 4;
+  optional float      target_orientation  = 5;
+  optional bool       halt                = 6;
+  optional float      servo               = 7;
+
+  optional float      orientation         = 8;
+
+  optional float      shoot               = 9;
+  optional float      chip                = 10;
+  optional float      dribbler            = 11;
+  
+  // debug
+  optional float      beep                = 12;
+  
+  // config
+  optional float      kp                  = 13;
+  optional float      ki                  = 14;
+  optional float      kd                  = 15;
+  optional float      i_limit             = 16;
+  
+  optional float      gyro_offset         = 17;
+  optional float      head_offset         = 18;
+  
+  optional float      shoot_a             = 19;
+  optional float      shoot_b             = 20;
+  optional float      shoot_c             = 21;
+
+  optional float      chip_a              = 22;
+  optional float      chip_b              = 23;
+  optional float      chip_c              = 24;
 }
