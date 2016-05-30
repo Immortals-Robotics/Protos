@@ -15,3 +15,7 @@ message RobotConfig {
   optional float    chip_b              =  11;
   optional float    chip_c              =  12;
 }
+
+message RobotOmniMatrix {
+  repeated float    matrix              =  1;
+}

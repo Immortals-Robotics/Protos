@@ -17,6 +17,8 @@ message RobotFeedback {
   repeated  bool    button_status       =  11;
   optional  bool    booster_enable      =  12;
   optional  bool    dribbler_connected  =  13;
+}
 
-  optional bytes    debug_dump          =  14;
+message RobotFeedbackCustom {
+  required bytes    debug_dump          =  1;
 }

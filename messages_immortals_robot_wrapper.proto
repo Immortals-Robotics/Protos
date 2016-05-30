@@ -1,0 +1,15 @@
+import "messages_immortals_robot_command.proto";
+import "messages_immortals_robot_config.proto";
+import "messages_immortals_robot_feedback.proto";
+
+
+message RobotMessage {
+  required uint32   robot_id            =  1;
+  oneof body {
+    RobotCommand          command          =  2;
+    RobotConfig           config           =  3;
+    RobotOmniMatrix       matrix           =  4;
+    RobotFeedback         feedback         =  5;
+    RobotFeedbackCustom   feedback_custom  =  6;
+  }
+}
