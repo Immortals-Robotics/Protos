@@ -17,21 +17,4 @@ message RobotCommand {
   
   // debug
   optional float      beep                = 12;
-  
-  // config
-  optional float      kp                  = 13;
-  optional float      ki                  = 14;
-  optional float      kd                  = 15;
-  optional float      i_limit             = 16;
-  
-  optional float      gyro_offset         = 17;
-  optional float      head_offset         = 18;
-  
-  optional float      shoot_a             = 19;
-  optional float      shoot_b             = 20;
-  optional float      shoot_c             = 21;
-
-  optional float      chip_a              = 22;
-  optional float      chip_b              = 23;
-  optional float      chip_c              = 24;
 }

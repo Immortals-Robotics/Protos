@@ -1,0 +1,17 @@
+message RobotConfig {
+  optional float    kp                  =  1;
+  optional float    ki                  =  2;
+  optional float    kd                  =  3;
+  optional float    i_limit             =  4;
+  
+  optional float    gyro_offset         =  5;
+  optional float    head_offset         =  6;
+  
+  optional float    shoot_a             =  7;
+  optional float    shoot_b             =  8;
+  optional float    shoot_c             =  9;
+
+  optional float    chip_a              =  10;
+  optional float    chip_b              =  11;
+  optional float    chip_c              =  12;
+}

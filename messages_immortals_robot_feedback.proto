@@ -18,22 +18,5 @@ message RobotFeedback {
   optional  bool    booster_enable      =  12;
   optional  bool    dribbler_connected  =  13;
 
-  // config
-  optional float    kp                  =  14;
-  optional float    ki                  =  15;
-  optional float    kd                  =  16;
-  optional float    i_limit             =  17;
-  
-  optional float    gyro_offset         =  18;
-  optional float    head_offset         =  19;
-  
-  optional float    shoot_a             =  20;
-  optional float    shoot_b             =  21;
-  optional float    shoot_c             =  22;
-
-  optional float    chip_a              =  23;
-  optional float    chip_b              =  24;
-  optional float    chip_c              =  25;
-
-  optional bytes    debug_dump          =  26;
+  optional bytes    debug_dump          =  14;
 }
