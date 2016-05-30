@@ -1,20 +1,31 @@
+package Immortals.Data;
+
+import "messages_immortals_common.proto";
+
 message RobotCommand {
-  required uint32     robot_id            = 1;
-
   // commands
-  optional float      vx                  = 2;
-  optional float      vy                  = 3;
-  optional float      omega               = 4;
-  optional float      target_orientation  = 5;
-  optional bool       halt                = 6;
-  optional float      servo               = 7;
+  optional Vector2f   velocity            = 1;
+  optional float      omega               = 2;
+  optional float      target_orientation  = 3;
 
-  optional float      orientation         = 8;
+  optional float      orientation         = 4;
 
-  optional float      shoot               = 9;
-  optional float      chip                = 10;
-  optional float      dribbler            = 11;
+  oneof shoot {
+    float             direct              = 5;
+    float             chip                = 6;
+  }
+  optional float      dribbler            = 7;
+  optional float      servo               = 8;
   
   // debug
-  optional float      beep                = 12;
+  optional float      beep                = 9;
+
+  enum FeedbackRequestType {
+    None   = 0;
+    Debug  = 1;
+    Info   = 2;
+    Fatal  = 3;
+    Custom = 4;
+  }
+  optional FeedbackRequestType feedback   = 10;
 }

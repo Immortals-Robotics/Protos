@@ -1,15 +1,19 @@
+package Immortals.Data;
+
 import "messages_immortals_robot_command.proto";
 import "messages_immortals_robot_config.proto";
 import "messages_immortals_robot_feedback.proto";
-
+import "messages_immortals_common.proto";
 
 message RobotMessage {
-  required uint32   robot_id            =  1;
+  required uint32     robot_id             =  1;
+  optional TeamColor  color                =  2;
+
   oneof body {
-    RobotCommand          command          =  2;
-    RobotConfig           config           =  3;
-    RobotOmniMatrix       matrix           =  4;
-    RobotFeedback         feedback         =  5;
-    RobotFeedbackCustom   feedback_custom  =  6;
+    RobotCommand          command          =  3;
+    RobotConfig           config           =  4;
+    RobotMatrix           matrix           =  5;
+    RobotFeedback         feedback         =  6;
+    RobotFeedbackCustom   feedback_custom  =  7;
   }
 }

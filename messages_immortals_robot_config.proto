@@ -1,3 +1,7 @@
+package Immortals.Data;
+
+import "messages_immortals_common.proto";
+
 message RobotConfig {
   optional float    kp                  =  1;
   optional float    ki                  =  2;
@@ -7,15 +11,10 @@ message RobotConfig {
   optional float    gyro_offset         =  5;
   optional float    head_offset         =  6;
   
-  optional float    shoot_a             =  7;
-  optional float    shoot_b             =  8;
-  optional float    shoot_c             =  9;
-
-  optional float    chip_a              =  10;
-  optional float    chip_b              =  11;
-  optional float    chip_c              =  12;
+  optional Vector3f direct_coeffs       =  7;
+  optional Vector3f chip_coeffs         =  8;
 }
 
-message RobotOmniMatrix {
-  repeated float    matrix              =  1;
+message RobotMatrix {
+  repeated Vector3f matrix              =  1;
 }

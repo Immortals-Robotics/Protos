@@ -1,24 +1,27 @@
+package Immortals.Data;
+
+import "messages_immortals_common.proto";
+
 message RobotFeedback {
-  required  uint32  robot_id            =  1;
+  optional  float	    battery_voltage     =  1;
+  optional  float     capacitor_voltage   =  2;
 
-  optional  float	  battery_voltage     =  2;
-  optional  float   capacitor_voltage   =  3;
+  optional  bool      ball_detected       =  3;
 
-  optional  bool    ball_detected       =  4;
+  optional  float     omega               =  4;
+  optional  float     orientation         =  5;
 
-  optional  float   omega               =  5;
-  optional  float   orientation         =  6;
-
-  repeated  bool    encoder_fault       =  7;
-  repeated  bool    motor_fault         =  8;
-  repeated  float   motor_velocity      =  9;
-  repeated  float   motor_target        =  10;
+  optional  bool      fault               =  6;
+  repeated  bool      encoder_fault       =  7;
+  repeated  bool      motor_fault         =  8;
+  optional  Vector4f  motor_velocity      =  9;
+  optional  Vector4f  motor_target        =  10;
   
-  repeated  bool    button_status       =  11;
-  optional  bool    booster_enable      =  12;
-  optional  bool    dribbler_connected  =  13;
+  repeated  bool      button_status       =  11 [packed = true];
+  optional  bool      booster_enabled     =  12;
+  optional  bool      dribbler_connected  =  13;
 }
 
 message RobotFeedbackCustom {
-  required bytes    debug_dump          =  1;
+  required bytes      debug_dump          =  1;
 }
