@@ -2,17 +2,24 @@ package Immortals.Data;
 
 import "messages_immortals_common.proto";
 
-message RobotConfig {
-  optional float    kp                  =  1;
-  optional float    ki                  =  2;
-  optional float    kd                  =  3;
-  optional float    i_limit             =  4;
+message RobotControlConfig {
+  required float    motor_kp            =  1;
+  required float    motor_ki            =  2;
+  required float    motor_kd            =  3;
+  required float    motor_i_limit       =  4;
+
+  required float    gyro_kp             =  5;
+  required float    gyro_ki             =  6;
+  required float    gyro_kd             =  7;
+  required float    gyro_i_limit        =  8;
   
-  optional float    gyro_offset         =  5;
-  optional float    head_offset         =  6;
-  
-  optional Vector3f direct_coeffs       =  7;
-  optional Vector3f chip_coeffs         =  8;
+  required float    max_w_acc           =  9;
+  required float    max_w_dec           =  10;
+}
+
+message RobotShootConfig {
+  required Vector3f direct_coeffs       =  1;
+  required Vector3f chip_coeffs         =  2;
 }
 
 message RobotMatrix {

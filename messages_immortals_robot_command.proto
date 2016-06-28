@@ -21,11 +21,10 @@ message RobotCommand {
   optional float      beep                = 9;
 
   enum FeedbackRequestType {
-    None   = 0;
-    Debug  = 1;
-    Info   = 2;
-    Fatal  = 3;
-    Custom = 4;
+    Debug  = 0;
+    Info   = 1;
+    Fatal  = 2;
+    Custom = 3;
   }
   optional FeedbackRequestType feedback   = 10;
 }

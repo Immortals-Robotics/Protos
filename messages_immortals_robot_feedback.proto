@@ -6,18 +6,18 @@ message RobotFeedback {
   optional  float	    battery_voltage     =  1;
   optional  float     capacitor_voltage   =  2;
 
-  optional  bool      ball_detected       =  3;
+  optional  float     omega               =  3;
+  optional  float     orientation         =  4;
 
-  optional  float     omega               =  4;
-  optional  float     orientation         =  5;
+  optional  Vector4f  motor_velocity      =  5;
+  optional  Vector4f  motor_target        =  6;
 
-  optional  bool      fault               =  6;
-  repeated  bool      encoder_fault       =  7;
-  repeated  bool      motor_fault         =  8;
-  optional  Vector4f  motor_velocity      =  9;
-  optional  Vector4f  motor_target        =  10;
-  
-  repeated  bool      button_status       =  11 [packed = true];
+  repeated  bool      encoder_fault       =  7 [packed = true];
+  repeated  bool      motor_fault         =  8 [packed = true];
+  repeated  bool      button_status       =  9 [packed = true];
+
+  optional  bool      fault               =  10;
+  optional  bool      ball_detected       =  11;
   optional  bool      booster_enabled     =  12;
   optional  bool      dribbler_connected  =  13;
 }

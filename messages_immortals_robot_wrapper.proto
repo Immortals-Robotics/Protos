@@ -11,9 +11,15 @@ message RobotMessage {
 
   oneof body {
     RobotCommand          command          =  3;
-    RobotConfig           config           =  4;
-    RobotMatrix           matrix           =  5;
-    RobotFeedback         feedback         =  6;
-    RobotFeedbackCustom   feedback_custom  =  7;
+    RobotControlConfig    control_config   =  4;
+    RobotShootConfig      shoot_config     =  5;
+    RobotMatrix           matrix           =  6;
+    RobotFeedback         feedback         =  7;
+    RobotFeedbackCustom   feedback_custom  =  8;
   }
+}
+
+message RobotMessageFrame {
+	required uint64       timestamp        = 1;
+	repeated RobotMessage messages         = 2;
 }
