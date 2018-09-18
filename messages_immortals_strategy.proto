@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 message SyncPoint
 {
   required int32  robotID        =  1;

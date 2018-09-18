@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 message SSL_DetectionBall {
   required float  confidence = 1;
   optional uint32 area       = 2;
@@ -27,4 +29,5 @@ message SSL_DetectionFrame {
   repeated SSL_DetectionBall  balls         = 5;
   repeated SSL_DetectionRobot robots_yellow = 6;
   repeated SSL_DetectionRobot robots_blue   = 7;
+  optional uint32             file_id       = 8;
 }

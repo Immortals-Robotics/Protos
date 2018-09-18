@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 import "messages_robocup_ssl_detection.proto";
 import "messages_immortals_aidebug.proto";
 
