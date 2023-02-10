@@ -2,8 +2,8 @@ syntax = "proto2";
 
 message point_2D {
   optional string name = 1;
-  required float x = 2;
-  required float y = 3;
+  required double x = 2;
+  required double y = 3;
 }
 
 message function_2D {
@@ -22,7 +22,7 @@ message raw_points {
 
 message data_flow {
   optional string name = 1;
-  repeated float y = 2;
+  repeated double y = 2;
 }
 
 message data_gram {
