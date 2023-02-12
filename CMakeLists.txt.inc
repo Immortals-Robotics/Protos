@@ -1,4 +1,7 @@
 set (GEN_PROTO_DEF_FILES
+	GrSim/grSim_Commands.proto
+	GrSim/grSim_Packet.proto
+	GrSim/grSim_Replacement.proto
 	immortals/data_plot.proto
 	immortals/Imm_wrapper.proto
 	immortals/messages_immortals_aidebug.proto
