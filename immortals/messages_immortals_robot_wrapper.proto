@@ -1,9 +1,11 @@
+syntax = "proto2";
+
 package Immortals.Data;
 
-import "messages_immortals_robot_command.proto";
-import "messages_immortals_robot_config.proto";
-import "messages_immortals_robot_feedback.proto";
-import "messages_immortals_common.proto";
+import "immortals/messages_immortals_robot_command.proto";
+import "immortals/messages_immortals_robot_config.proto";
+import "immortals/messages_immortals_robot_feedback.proto";
+import "immortals/messages_immortals_common.proto";
 
 message RobotMessage {
   required uint32     robot_id             =  1;

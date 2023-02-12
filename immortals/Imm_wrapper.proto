@@ -1,7 +1,8 @@
 syntax = "proto2";
-import "data_plot.proto";
-import "visual_log.proto";
-import "text_log.proto";
+
+import "immortals/data_plot.proto";
+import "immortals/visual_log.proto";
+import "immortals/text_log.proto";
 
 message Imm_DBG_wrapper {
   optional raw_points DBG_raw_points = 1;

@@ -1,5 +1,7 @@
-import "messages_robocup_ssl_detection.proto";
-import "messages_immortals_aidebug.proto";
+syntax = "proto2";
+
+import "ssl-vision/messages_robocup_ssl_detection.proto";
+import "immortals/messages_immortals_aidebug.proto";
 
 message ballsDataMsg
 {

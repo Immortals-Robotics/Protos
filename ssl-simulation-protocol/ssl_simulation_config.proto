@@ -1,8 +1,8 @@
 syntax = "proto2";
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
-import "../ssl-game-controller/ssl_gc_common.proto";
-import "../ssl-vision/messages_robocup_ssl_geometry.proto";
+import "ssl-game-controller/ssl_gc_common.proto";
+import "ssl-vision/messages_robocup_ssl_geometry.proto";
 import "google/protobuf/any.proto";
 
 // Movement limits for a robot

@@ -1,4 +1,6 @@
-import "messages_immortals_common.proto";
+syntax = "proto2";
+
+import "immortals/messages_immortals_common.proto";
 
 package Immortals.Data;
 

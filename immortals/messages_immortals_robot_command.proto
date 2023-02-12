@@ -1,6 +1,8 @@
+syntax = "proto2";
+
 package Immortals.Data;
 
-import "messages_immortals_common.proto";
+import "immortals/messages_immortals_common.proto";
 
 message RobotCommand {
   // commands

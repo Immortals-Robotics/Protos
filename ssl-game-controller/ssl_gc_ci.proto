@@ -2,10 +2,10 @@ syntax = "proto2";
 
 option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/ci";
 
-import "../ssl-vision/messages_robocup_ssl_wrapper_tracked.proto";
-import "ssl_gc_api.proto";
-import "ssl_gc_referee_message.proto";
-import "../ssl-vision/messages_robocup_ssl_geometry.proto";
+import "ssl-vision/messages_robocup_ssl_wrapper_tracked.proto";
+import "ssl-game-controller/ssl_gc_api.proto";
+import "ssl-game-controller/ssl_gc_referee_message.proto";
+import "ssl-vision/messages_robocup_ssl_geometry.proto";
 
 // The input format to the GC
 message CiInput {
