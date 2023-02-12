@@ -4,16 +4,6 @@ set (PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/gr-sim/grSim_Replacement.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/data_plot.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/Imm_wrapper.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_aidebug.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_common.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_configs.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_robot_command.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_robot_config.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_robot_feedback.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_robot_wrapper.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_strategy.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_world_state.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/messages_immortals_wrapper.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/text_log.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/visual_log.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_autoref_ci.proto
