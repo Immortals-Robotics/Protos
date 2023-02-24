@@ -1,7 +1,4 @@
 set (PROTO_FILES
-	${CMAKE_CURRENT_SOURCE_DIR}/gr-sim/grSim_Commands.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/gr-sim/grSim_Packet.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/gr-sim/grSim_Replacement.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/data_plot.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/Imm_wrapper.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/text_log.proto
