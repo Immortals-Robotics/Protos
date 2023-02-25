@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package Immortals.Protos;
+
+message RobotCommand
+{
+	required uint32 id = 1;
+
+    required float v_x = 2;
+    required float v_y = 3;
+    required float v_angular = 4;
+}
+
+message RobotCommands
+{
+    required double timestamp = 1;
+    repeated RobotCommand commands = 2;
+}
+
+message VisionInterface
+{
+    optional RobotCommands commands = 1;
+}
