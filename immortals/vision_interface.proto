@@ -2,22 +2,42 @@ syntax = "proto2";
 
 package Immortals.Protos;
 
-message RobotCommand
-{
-	required uint32 id = 1;
-
-    required float v_x = 2;
-    required float v_y = 3;
-    required float v_angular = 4;
-}
-
 message RobotCommands
 {
+    message Command
+    {
+	    required uint32 id = 1;
+
+        required float v_x       = 2;
+        required float v_y       = 3;
+        required float v_angular = 4;
+    }
+
     required double timestamp = 1;
-    repeated RobotCommand commands = 2;
+    repeated Command commands = 2;
+}
+
+message Kalman
+{
+    message ResetCommand
+    {
+        enum Type
+        {
+            None     = 0;
+            Position = 1; // BIT(0)
+            Angle    = 2; // BIT(1)
+            Both     = 3; // BIT(0) | BIT(1)
+        }
+
+        required uint32 robot_id = 1;
+        required Type   type     = 2;
+    }
+
+    repeated ResetCommand reset_commands = 1;
 }
 
 message VisionInterface
 {
     optional RobotCommands commands = 1;
+    optional Kalman        kalman   = 2;
 }
