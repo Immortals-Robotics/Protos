@@ -7,6 +7,8 @@ import "ssl-game-controller/ssl_gc_api.proto";
 import "ssl-game-controller/ssl_gc_referee_message.proto";
 import "ssl-vision/messages_robocup_ssl_geometry.proto";
 
+package Protos;
+
 // The input format to the GC
 message CiInput {
     // New unix timestamp in [ns] for the GC

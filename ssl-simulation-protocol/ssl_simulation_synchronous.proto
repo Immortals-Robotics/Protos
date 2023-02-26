@@ -6,6 +6,8 @@ import "ssl-simulation-protocol/ssl_simulation_robot_feedback.proto";
 import "ssl-simulation-protocol/ssl_simulation_robot_control.proto";
 import "ssl-simulation-protocol/ssl_simulation_control.proto";
 
+package Protos;
+
 // Request from the team to the simulator
 message SimulationSyncRequest {
     // The simulation step [s] to perform

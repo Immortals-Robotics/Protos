@@ -1,6 +1,8 @@
 syntax = "proto2";
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
+package Protos;
+
 // Realism configuration for ER-Force simulator
 message RealismConfigErForce {
     // Standard deviation of the gaussian noise applied to the ball position [m]

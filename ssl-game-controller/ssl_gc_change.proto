@@ -11,6 +11,8 @@ import "ssl-game-controller/ssl_gc_referee_message.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
+package Protos;
+
 // A state change
 message StateChange {
     // A unique increasing id

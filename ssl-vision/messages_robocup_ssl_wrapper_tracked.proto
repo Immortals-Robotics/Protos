@@ -1,6 +1,8 @@
 syntax = "proto2";
 import "ssl-vision/messages_robocup_ssl_detection_tracked.proto";
 
+package Protos;
+
 // A wrapper packet containing meta data of the source
 // Also serves for the possibility to extend the protocol later
 message TrackerWrapperPacket {

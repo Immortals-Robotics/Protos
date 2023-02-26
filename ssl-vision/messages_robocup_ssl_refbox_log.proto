@@ -1,6 +1,8 @@
 syntax = "proto2";
 import "ssl-vision/messages_robocup_ssl_detection.proto";
 
+package Protos;
+
 message Log_Frame
 {
     required SSL_DetectionFrame frame = 1;

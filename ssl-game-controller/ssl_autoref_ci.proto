@@ -7,6 +7,8 @@ import "ssl-vision/messages_robocup_ssl_detection.proto";
 import "ssl-vision/messages_robocup_ssl_geometry.proto";
 import "ssl-game-controller/ssl_gc_referee_message.proto";
 
+package Protos;
+
 // The AutoRefCiInput contains all packets/messages that would otherwise be received through multicast by the auto-referee
 // It may contain either a raw or a tracked SSL-vision packet. If both are given, the implementation may choose either one.
 message AutoRefCiInput {

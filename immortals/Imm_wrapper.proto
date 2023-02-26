@@ -4,6 +4,8 @@ import "immortals/data_plot.proto";
 import "immortals/visual_log.proto";
 import "immortals/text_log.proto";
 
+package Immortals.Protos;
+
 message Imm_DBG_wrapper {
   optional raw_points DBG_raw_points = 1;
   optional Debug_Draw DBG_draw = 2;

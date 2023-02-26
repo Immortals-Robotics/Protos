@@ -2,6 +2,8 @@ syntax = "proto2";
 
 option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/geom";
 
+package Protos;
+
 // A vector with two dimensions
 message Vector2 {
     required float x = 1;

@@ -2,6 +2,8 @@ syntax = "proto2";
 
 option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/engine";
 
+package Protos;
+
 // The engine config
 message Config {
     // The behavior for each game event

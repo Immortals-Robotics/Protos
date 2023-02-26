@@ -5,6 +5,8 @@ option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/rco
 import "ssl-game-controller/ssl_gc_game_event.proto";
 import "ssl-game-controller/ssl_gc_rcon.proto";
 
+package Protos;
+
 // AutoRefRegistration is the first message that a client must send to the controller to identify itself
 message AutoRefRegistration {
     // identifier is a unique name of the client

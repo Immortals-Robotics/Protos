@@ -2,6 +2,8 @@ syntax = "proto2";
 
 option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/state";
 
+package Protos;
+
 // Team is either blue or yellow
 enum Team {
     // team not set
