@@ -11,10 +11,11 @@ message RobotCommands
         required float v_x       = 2;
         required float v_y       = 3;
         required float v_angular = 4;
-    }
 
-    required double timestamp = 1;
-    repeated Command commands = 2;
+        required double timestamp = 5;
+    }
+    
+    repeated Command commands = 1;
 }
 
 message Kalman
