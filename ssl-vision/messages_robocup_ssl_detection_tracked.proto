@@ -75,6 +75,8 @@ message TrackedRobot {
 
     // The raw position (x, y) [m] in the ssl-vision coordinate system
     optional Vector2 raw_pos = 100;
+
+    optional float raw_orientation = 101;
 }
 
 // A frame that contains all currently tracked objects on the field on all cameras
