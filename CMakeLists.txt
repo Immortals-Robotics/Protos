@@ -19,6 +19,7 @@ set (PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon_team.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_referee_message.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_state.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/ssl-refbox/game_event.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-refbox/referee.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_config.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_control.proto
