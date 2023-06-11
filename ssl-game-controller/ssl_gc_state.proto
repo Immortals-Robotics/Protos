@@ -10,6 +10,8 @@ import "ssl-game-controller/ssl_gc_referee_message.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
+package Protos;
+
 message YellowCard {
     optional uint32 id = 1;
     optional GameEvent caused_by_game_event = 2;

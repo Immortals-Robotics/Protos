@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package Immortals.Protos;
+
 message color
 {
   required double  r			  =  1;

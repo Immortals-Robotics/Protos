@@ -5,6 +5,8 @@ option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/rco
 import "ssl-game-controller/ssl_gc_common.proto";
 import "ssl-game-controller/ssl_gc_rcon.proto";
 
+package Protos;
+
 // a registration that must be send by the remote control to the controller as the very first message
 message RemoteControlRegistration {
     // the team to be controlled

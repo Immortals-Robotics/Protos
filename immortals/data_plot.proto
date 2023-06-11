@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package Immortals.Protos;
+
 message point_2D {
   optional string name = 1;
   required double x = 2;

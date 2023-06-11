@@ -1,6 +1,8 @@
 syntax = "proto2";
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
+package Protos;
+
 // Full command for a single robot
 message RobotCommand {
     // Id of the robot

@@ -5,6 +5,8 @@ import "ssl-game-controller/ssl_gc_common.proto";
 import "ssl-simulation-protocol/ssl_simulation_config.proto";
 import "ssl-simulation-protocol/ssl_simulation_error.proto";
 
+package Protos;
+
 // Teleport the ball to a new location and optionally set it to some velocity
 message TeleportBall {
     // x-coordinate [m]

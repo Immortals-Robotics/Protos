@@ -9,6 +9,8 @@ import "ssl-game-controller/ssl_gc_engine_config.proto";
 
 import "google/protobuf/duration.proto";
 
+package Protos;
+
 // Message format that is pushed from the GC to the client
 message Output {
     // The current match state

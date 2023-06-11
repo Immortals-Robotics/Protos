@@ -1,6 +1,8 @@
 syntax = "proto2";
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
+package Protos;
+
 // Custom robot specs for ER-Force simulator
 // See ./Robot.jpg and ./Robot.pdf for details on how these parameters are applied to the robot model.
 message RobotSpecErForce {

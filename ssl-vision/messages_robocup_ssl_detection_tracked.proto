@@ -3,6 +3,8 @@ syntax = "proto2";
 import "ssl-game-controller/ssl_gc_common.proto";
 import "ssl-game-controller/ssl_gc_geometry.proto";
 
+package Protos;
+
 // Default network address: 224.5.23.2:10010
 
 // Capabilities that a source implementation can have
@@ -25,6 +27,11 @@ message TrackedBall {
     // A value between 0 (not visible) and 1 (visible)
     // The exact implementation depends on the source software
     optional float visibility = 3;
+
+    // Immortals custom fields, starting from 100 not to collide with official fields
+
+    // The raw position (x, y) [m] in the ssl-vision coordinate system
+    optional Vector2 raw_pos = 100;
 }
 
 // A ball kicked by a robot, including predictions when the ball will come to a stop
@@ -63,6 +70,13 @@ message TrackedRobot {
     // A value between 0 (not visible) and 1 (visible)
     // The exact implementation depends on the source software
     optional float visibility = 6;
+
+    // Immortals custom fields, starting from 100 not to collide with official fields
+
+    // The raw position (x, y) [m] in the ssl-vision coordinate system
+    optional Vector2 raw_pos = 100;
+
+    optional float raw_orientation = 101;
 }
 
 // A frame that contains all currently tracked objects on the field on all cameras

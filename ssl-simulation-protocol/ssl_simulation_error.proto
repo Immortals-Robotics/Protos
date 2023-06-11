@@ -1,6 +1,8 @@
 syntax = "proto2";
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
+package Protos;
+
 // Errors in the simulator
 message SimulatorError {
     // Unique code of the error for automatic handling on client side

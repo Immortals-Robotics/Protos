@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package Immortals.Protos;
+
 message Debug_Text {
   required string text = 1;
   required string title = 2;

@@ -2,6 +2,8 @@ syntax = "proto2";
 
 option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/rcon";
 
+package Protos;
+
 // a reply that is sent by the controller for each request from teams or autoRefs
 message ControllerReply {
     // status_code is an optional code that indicates the result of the last request

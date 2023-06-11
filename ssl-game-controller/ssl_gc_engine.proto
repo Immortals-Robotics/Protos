@@ -7,6 +7,8 @@ import "ssl-game-controller/ssl_gc_common.proto";
 
 import "google/protobuf/timestamp.proto";
 
+package Protos;
+
 // The GC state contains settings and state independent of the match state
 message GcState {
     // the state of each team
