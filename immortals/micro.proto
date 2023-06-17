@@ -2,12 +2,65 @@ syntax = "proto2";
 
 package Immortals.Protos;
 
+message MikonaStatus
+{
+    required bool connected = 1;
+
+    required bool charging = 2;
+    required bool discharging = 3;
+
+    required bool done = 4;
+    required bool fault = 5;
+
+    required float v_out = 6;
+}
+
+message MotorStatus
+{
+    required bool status = 1;
+    required bool fault = 2;
+}
+
+message PowerStatus
+{
+    required float voltage = 1;
+    required float current = 2;
+    required float power = 3;
+}
+
 message MicroStatus
 {
-    required bool ballDetected = 1;
+    required uint32 robot_id = 1;
+    repeated bool dip_switches = 2;
+    required bool button = 3;
+
+    required bool ballDetected = 4;
+
+    required MikonaStatus mikona = 5;
+    repeated MotorStatus motors = 6;
+    required PowerStatus power_5v = 7;
+    required PowerStatus power_24v = 8;
+}
+
+message MikonaCommand
+{
+    required bool charge = 1;
+    required bool discharge = 2;
+
+    optional uint32 kick_a = 3;
+    optional uint32 kick_b = 4;
+}
+
+message LEDCommand
+{
+    required bool wifi_connected = 1;
+    required bool wifi_acitivity = 2;
+    required bool fault = 3;
 }
 
 message MicroCommand
 {
-    required uint32 kick = 1;
+    required MikonaCommand mikona = 1;
+    required LEDCommand led = 2;
+    required bool buzzer = 3;
 }
