@@ -38,3 +38,8 @@ set (PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_wrapper_legacy.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_wrapper_tracked.proto
 	PARENT_SCOPE)
+
+	
+set (NANO_PROTO_FILES
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
+	PARENT_SCOPE)

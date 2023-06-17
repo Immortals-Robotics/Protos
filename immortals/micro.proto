@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package Immortals.Protos;
+
+message MicroStatus
+{
+    required bool ballDetected = 1;
+}
+
+message MicroCommand
+{
+    required uint32 kick = 1;
+}
