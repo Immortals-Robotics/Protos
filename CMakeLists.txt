@@ -1,6 +1,9 @@
 set (PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/data_plot.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/Imm_wrapper.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_control.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_feedback.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/text_log.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/vision_interface.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/visual_log.proto
