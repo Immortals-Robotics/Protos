@@ -38,7 +38,7 @@ message MoveGlobalVelocity
 }
 
 // Wrapper for different kinds of movement commands
-message RobotMoveCommand
+message MoveCommand
 {
     oneof command
     {
@@ -56,15 +56,16 @@ message RobotCommand
 {
     enum KickType
     {
-        Direct = 0;
-        Chip   = 1;
+        None   = 0;
+        Direct = 1;
+        Chip   = 2;
     }
 
     // Id of the robot
     uint32 id = 1;
     
     // Movement command
-    RobotMoveCommand move_command = 2;
+    MoveCommand move_command = 2;
 
     bool mikona_enabled = 3;
     // Absolute (3 dimensional) kick speed [m/s]
