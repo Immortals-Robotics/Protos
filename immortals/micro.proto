@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package Immortals.Protos;
+
+message MikonaStatus
+{
+    bool connected = 1;
+
+    bool charging = 2;
+    bool discharging = 3;
+
+    bool done = 4;
+    bool fault = 5;
+
+    float v_out = 6;
+}
+
+message MotorStatus
+{
+    bool status = 1;
+    bool fault = 2;
+}
+
+message PowerStatus
+{
+    float voltage = 1;
+    float current = 2;
+    float power = 3;
+}
+
+message MicroStatus
+{
+    uint32 robot_id = 1;
+
+    bool dip_switch_1 = 2;
+    bool dip_switch_2 = 3;
+    bool dip_switch_3 = 4;
+    bool dip_switch_4 = 5;
+    
+    bool button = 6;
+
+    bool ballDetected = 7;
+
+    MikonaStatus mikona = 8;
+
+    MotorStatus motor_1 = 9;
+    MotorStatus motor_2 = 10;
+    MotorStatus motor_3 = 11;
+    MotorStatus motor_4 = 12;
+    MotorStatus motor_d = 13;
+    
+    PowerStatus power_5v = 14;
+    PowerStatus power_24v = 15;
+}
+
+message MikonaCommand
+{
+    bool charge = 1;
+    bool discharge = 2;
+
+    uint32 kick_a = 3;
+    uint32 kick_b = 4;
+}
+
+message LEDCommand
+{
+    bool wifi_connected = 1;
+    bool wifi_acitivity = 2;
+    bool fault = 3;
+}
+
+message MicroCommand
+{
+    MikonaCommand mikona = 1;
+    LEDCommand led = 2;
+    bool buzzer = 3;
+}
