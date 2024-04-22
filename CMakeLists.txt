@@ -90,7 +90,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${PROTO_FILES})
 source_group(TREE ${CMAKE_CURRENT_BINARY_DIR} PREFIX "generated" FILES ${PROTO_SRCS} ${PROTO_HDRS})
 
-target_link_libraries(${PROJECT_NAME} 
+target_link_libraries(${PROJECT_NAME} PUBLIC
     protobuf::libprotobuf)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD OFF)
