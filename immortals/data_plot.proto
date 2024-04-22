@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package Immortals.Protos;
+package Protos.Immortals;
 
 message point_2D {
   optional string name = 1;

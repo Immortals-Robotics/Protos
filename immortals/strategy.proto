@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package Immortals.Protos;
+package Protos.Immortals;
 
 message SyncPoint
 {
