@@ -98,3 +98,6 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     protobuf::libprotobuf)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD OFF)
+
+target_precompile_headers(${PROJECT_NAME} 
+	INTERFACE ${PROTO_HDRS})
