@@ -17,9 +17,7 @@ message Vec3
 
 message Point
 {
-    Vec2   pos   = 1;
-    string layer = 3;
-    Color  color = 4;
+    Vec2 pos = 1;
 }
 
 message Line
