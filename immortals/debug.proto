@@ -24,6 +24,7 @@ message Draw
         LineSegment line_segment = 12;
         Rect        rect         = 13;
         Circle      circle       = 14;
+        Triangle    triangle     = 15;
     }
 }
 

@@ -45,6 +45,11 @@ message Circle
     float r      = 3;
 }
 
+message Triangle
+{
+    repeated Vec2 corner = 1;
+}
+
 message Angle
 {
     float deg = 1;
