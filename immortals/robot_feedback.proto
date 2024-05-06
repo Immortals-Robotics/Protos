@@ -6,10 +6,10 @@ message MikonaFeedback
 {
     bool connected = 1;
 
-    bool charging = 2;
+    bool charging    = 2;
     bool discharging = 3;
 
-    bool done = 4;
+    bool done  = 4;
     bool fault = 5;
 
     float v_out = 6;
@@ -19,13 +19,13 @@ message PowerFeedback
 {
     float voltage = 1;
     float current = 2;
-    float power = 3;
+    float power   = 3;
 }
 
 message MotorFeedback
 {
     bool connected = 1;
-    bool fault = 2;
+    bool fault     = 2;
 
     // velocities are in m/s
     float target_velocity = 3;
@@ -56,13 +56,13 @@ message RobotFeedback
     uint32 id = 1;
 
     bool ball_detected = 2;
-    bool fault = 3;
+    bool fault         = 3;
 
     MikonaFeedback mikona = 4;
 
     repeated PowerFeedback power = 5;
 
-    repeated MotorFeedback motors = 6;
+    repeated MotorFeedback motor = 6;
 
     ImuFeedback imu = 7;
 }

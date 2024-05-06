@@ -63,7 +63,7 @@ message RobotCommand
 
     // Id of the robot
     uint32 id = 1;
-    
+
     // Movement command
     MoveCommand move_command = 2;
 
@@ -72,14 +72,14 @@ message RobotCommand
     float kick_speed = 4;
     // Kick angle [degree] (defaults to 0 degrees for a straight kick)
     KickType kick_type = 5;
-    
+
     // Dribbler speed in rounds per minute [rpm]
     float dribbler_speed = 6;
 }
 
 // Command from the connected client to the simulator
-message RobotControl 
+message RobotControl
 {
     // Control the robots
-    repeated RobotCommand robot_commands = 1;
+    repeated RobotCommand robot_command = 1;
 }

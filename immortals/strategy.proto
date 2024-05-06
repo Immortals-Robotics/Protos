@@ -59,6 +59,6 @@ message Strategy
 
 message PlayBook
 {
-    repeated Strategy strategies = 1;
-    repeated float    weights    = 2;
+    repeated Strategy strategy = 1;
+    repeated float    weight   = 2;
 }

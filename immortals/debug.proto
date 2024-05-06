@@ -11,7 +11,7 @@ message SourceLocation
     int32  line          = 3;
 }
 
-message Shape
+message Draw
 {
     string         layer           = 1;
     SourceLocation source_location = 2;
@@ -52,7 +52,7 @@ message Wrapper
 {
     fixed64 timestamp = 1;
 
-    WorldState     world_state = 10;
-    repeated Shape draws       = 11;
-    repeated Log   logs        = 12;
+    WorldState    world_state = 10;
+    repeated Draw draw        = 11;
+    repeated Log  log         = 12;
 }

@@ -15,7 +15,7 @@ message RobotCommands
         double timestamp = 5;
     }
 
-    repeated Command commands = 1;
+    repeated Command command = 1;
 }
 
 message Kalman
@@ -39,6 +39,6 @@ message Kalman
 
 message VisionInterface
 {
-    RobotCommands commands = 1;
-    Kalman        kalman   = 2;
+    RobotCommands command = 1;
+    Kalman        kalman  = 2;
 }

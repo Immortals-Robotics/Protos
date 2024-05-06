@@ -97,6 +97,6 @@ message WorldState
 {
     BallState ball = 1;
 
-    repeated RobotState own_robots = 2;
-    repeated RobotState opp_robots = 3;
+    repeated RobotState own_robot = 2;
+    repeated RobotState opp_robot = 3;
 }
