@@ -16,6 +16,8 @@ message Draw
     string         layer           = 1;
     SourceLocation source_location = 2;
     Color          color           = 3;
+    bool           is_filled       = 4;
+    float          thickness       = 5;
 
     oneof shape
     {
