@@ -1,0 +1,6 @@
+---
+Language: Proto
+BasedOnStyle: Microsoft
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignOperands: true
