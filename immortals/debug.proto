@@ -55,7 +55,6 @@ message Wrapper
 {
     fixed64 timestamp = 1;
 
-    WorldState    world_state = 10;
-    repeated Draw draw        = 11;
-    repeated Log  log         = 12;
+    repeated Draw draw        = 10;
+    repeated Log  log         = 11;
 }

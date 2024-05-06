@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+import "immortals/common.proto";
+
+package Protos.Immortals;
+
+enum SeenState
+{
+    CompletelyOut = 0;
+    TemprolilyOut = 1;
+    Seen          = 2;
+}
+
+enum TeamColor
+{
+    Blue   = 0;
+    Yellow = 1;
+}
+
+message RobotState
+{
+    int32     id    = 1;
+    TeamColor color = 2;
+
+    Vec2 position = 3;
+    Vec2 velocity = 4;
+
+    Angle angle            = 5;
+    Angle angular_velocity = 6;
+
+    SeenState seen_state = 7;
+}
+
+message BallState
+{
+    Vec2 position = 1;
+    Vec2 velocity = 2;
+
+    SeenState seen_state = 3;
+}
+
+message WorldState
+{
+    BallState ball = 1;
+
+    repeated RobotState own_robot = 2;
+    repeated RobotState opp_robot = 3;
+}
