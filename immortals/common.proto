@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package Protos.Immortals;
+
+message Vec2
+{
+    float x = 1;
+    float y = 2;
+}
+
+message Vec3
+{
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Point
+{
+    Vec2   pos   = 1;
+    string layer = 3;
+    Color  color = 4;
+}
+
+message Line
+{
+    float a = 1;
+    float b = 2;
+    float c = 3;
+}
+
+message LineSegment
+{
+    Vec2 start = 1;
+    Vec2 end   = 2;
+}
+
+message Rect
+{
+    Vec2 min = 1;
+    Vec2 max = 2;
+}
+
+message Circle
+{
+    Vec2  center = 1;
+    float r      = 3;
+}
+
+message Angle
+{
+    float deg = 1;
+}
+
+message Color
+{
+    float r = 1;
+    float g = 2;
+    float b = 3;
+    float a = 4;
+}
+
+enum SeenState
+{
+    CompletelyOut = 0;
+    TemprolilyOut = 1;
+    Seen          = 2;
+}
+
+enum TeamColor
+{
+    Blue   = 0;
+    Yellow = 1;
+}
+
+message RobotState
+{
+    int32     id    = 1;
+    TeamColor color = 2;
+
+    Vec2 position = 3;
+    Vec2 velocity = 4;
+
+    Angle angle            = 5;
+    Angle angular_velocity = 6;
+
+    SeenState seen_state = 7;
+}
+
+message BallState
+{
+    Vec2 position = 1;
+    Vec2 velocity = 2;
+
+    SeenState seen_state = 3;
+}
+
+message WorldState
+{
+    BallState ball = 1;
+
+    repeated RobotState own_robots = 2;
+    repeated RobotState opp_robots = 3;
+}

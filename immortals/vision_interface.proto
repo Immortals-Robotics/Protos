@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package Protos.Immortals;
 
@@ -6,15 +6,15 @@ message RobotCommands
 {
     message Command
     {
-	    required uint32 id = 1;
+        uint32 id = 1;
 
-        required float v_x       = 2;
-        required float v_y       = 3;
-        required float v_angular = 4;
+        float v_x       = 2;
+        float v_y       = 3;
+        float v_angular = 4;
 
-        required double timestamp = 5;
+        double timestamp = 5;
     }
-    
+
     repeated Command commands = 1;
 }
 
@@ -30,8 +30,8 @@ message Kalman
             Both     = 3; // BIT(0) | BIT(1)
         }
 
-        required uint32 robot_id = 1;
-        required Type   type     = 2;
+        uint32 robot_id = 1;
+        Type   type     = 2;
     }
 
     repeated ResetCommand reset_commands = 1;
@@ -39,6 +39,6 @@ message Kalman
 
 message VisionInterface
 {
-    optional RobotCommands commands = 1;
-    optional Kalman        kalman   = 2;
+    RobotCommands commands = 1;
+    Kalman        kalman   = 2;
 }

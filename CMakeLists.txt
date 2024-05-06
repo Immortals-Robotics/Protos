@@ -7,15 +7,13 @@ set (PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Packet.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Replacement.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Robotstatus.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/data_plot.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/Imm_wrapper.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/common.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/debug.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_control.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_feedback.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/strategy.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/text_log.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/vision_interface.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/visual_log.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_autoref_ci.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_api.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_change.proto
