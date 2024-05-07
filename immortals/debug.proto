@@ -13,11 +13,10 @@ message SourceLocation
 
 message Draw
 {
-    string         layer           = 1;
-    SourceLocation source_location = 2;
-    Color          color           = 3;
-    bool           is_filled       = 4;
-    float          thickness       = 5;
+    SourceLocation source    = 1;
+    Color          color     = 2;
+    bool           filled    = 3;
+    float          thickness = 4;
 
     oneof shape
     {
@@ -55,6 +54,6 @@ message Wrapper
 {
     fixed64 timestamp = 1;
 
-    repeated Draw draw        = 10;
-    repeated Log  log         = 11;
+    repeated Draw draw = 10;
+    repeated Log  log  = 11;
 }
