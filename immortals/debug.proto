@@ -6,9 +6,9 @@ package Protos.Immortals.Debug;
 
 message SourceLocation
 {
-    string file_name     = 1;
-    string function_name = 2;
-    int32  line          = 3;
+    string file     = 1;
+    string function = 2;
+    int32  line     = 3;
 }
 
 message Draw
@@ -29,23 +29,23 @@ message Draw
     }
 }
 
-// These should be equal to SPDLOG_LEVEL_*
-enum LogLevel
-{
-    Trace    = 0;
-    Debug    = 1;
-    Info     = 2;
-    Warning  = 3;
-    Error    = 4;
-    Critical = 5;
-}
-
 message Log
 {
-    LogLevel       level           = 1;
-    SourceLocation source_location = 2;
-    string         logger_name     = 3;
-    Color          color           = 4;
+    // These should be equal to SPDLOG_LEVEL_*
+    enum Level
+    {
+        Trace    = 0;
+        Debug    = 1;
+        Info     = 2;
+        Warning  = 3;
+        Error    = 4;
+        Critical = 5;
+    }
+
+    Level          level  = 1;
+    SourceLocation source = 2;
+    string         logger = 3;
+    Color          color  = 4;
 
     string payload = 10;
 }
