@@ -45,9 +45,8 @@ message Log
     Level          level  = 1;
     SourceLocation source = 2;
     string         logger = 3;
-    Color          color  = 4;
 
-    string payload = 10;
+    string text = 10;
 }
 
 message Wrapper
