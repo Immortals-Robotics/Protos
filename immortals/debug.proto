@@ -51,7 +51,7 @@ message Log
 
 message Wrapper
 {
-    fixed64 timestamp = 1;
+    fixed64 time = 1;
 
     repeated Draw draw = 10;
     repeated Log  log  = 11;

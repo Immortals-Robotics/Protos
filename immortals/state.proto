@@ -17,6 +17,29 @@ enum TeamColor
     Yellow = 1;
 }
 
+message RawRobotState
+{
+    int32     id    = 1;
+    TeamColor color = 2;
+
+    Vec2  position = 3;
+    Angle angle    = 4;
+}
+
+message RawBallState
+{
+    Vec2 position = 1;
+}
+
+message RawWorldState
+{
+    fixed64 time = 1;
+
+    repeated RawBallState  balls         = 10;
+    repeated RawRobotState yellow_robots = 11;
+    repeated RawRobotState blue_robots   = 12;
+}
+
 message RobotState
 {
     int32     id    = 1;
@@ -41,8 +64,9 @@ message BallState
 
 message WorldState
 {
-    BallState ball = 1;
+    fixed64 time = 1;
 
-    repeated RobotState own_robot = 2;
-    repeated RobotState opp_robot = 3;
+    BallState           ball      = 10;
+    repeated RobotState own_robot = 11;
+    repeated RobotState opp_robot = 12;
 }
