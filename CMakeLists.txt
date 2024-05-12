@@ -12,8 +12,8 @@ set(PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/debug.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_feedback.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/play_book.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/state.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/strategy.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/vision_interface.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_autoref_ci.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_api.proto
