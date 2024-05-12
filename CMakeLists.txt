@@ -7,10 +7,10 @@ set(PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Packet.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Replacement.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Robotstatus.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/immortals/command.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/common.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/debug.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_control.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_feedback.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/state.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/strategy.proto

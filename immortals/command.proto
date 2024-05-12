@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "immortals/common.proto";
+
+package Protos.Immortals;
+
+message Command
+{
+    int32 vision_id = 1;
+
+    Vec3 motion = 2;
+    bool halted = 3;
+
+    Angle current_angle = 4;
+    Angle target_angle  = 5;
+
+    int32 shoot    = 6;
+    int32 chip     = 7;
+    int32 dribbler = 8;
+}
+
+message CommandsWrapper
+{
+    fixed64 time = 1;
+
+    repeated Command command = 10;
+}
