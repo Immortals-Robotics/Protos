@@ -6,9 +6,12 @@ package Protos.Immortals.Debug;
 
 message SourceLocation
 {
-    string file     = 1;
-    string function = 2;
-    int32  line     = 3;
+    // file and function are hashes of the actual strings
+    // and are stored in wrapper's 'strings' filed
+    int32 file     = 1;
+    int32 function = 2;
+
+    int32 line = 3;
 }
 
 message Draw
@@ -44,7 +47,6 @@ message Log
 
     Level          level  = 1;
     SourceLocation source = 2;
-    string         logger = 3;
 
     string text = 10;
 }
@@ -55,4 +57,6 @@ message Wrapper
 
     repeated Draw draw = 10;
     repeated Log  log  = 11;
+
+    map<int32, string> strings = 12;
 }
