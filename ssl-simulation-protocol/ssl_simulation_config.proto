@@ -4,7 +4,7 @@ import "ssl-game-controller/ssl_gc_common.proto";
 import "ssl-vision/messages_robocup_ssl_geometry.proto";
 import "google/protobuf/any.proto";
 
-package Protos;
+package Protos.Ssl.Simulation;
 
 // Movement limits for a robot
 message RobotLimits

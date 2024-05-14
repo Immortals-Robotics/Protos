@@ -1,9 +1,9 @@
 syntax = "proto2";
 
-package Protos;
+package Protos.Ssl.Simulation;
 
 // Errors in the simulator
-message SimulatorError
+message Error
 {
     // Unique code of the error for automatic handling on client side
     optional string code = 1;

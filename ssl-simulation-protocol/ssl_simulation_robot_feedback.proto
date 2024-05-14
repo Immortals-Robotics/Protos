@@ -3,7 +3,7 @@ syntax = "proto2";
 import "ssl-simulation-protocol/ssl_simulation_error.proto";
 import "google/protobuf/any.proto";
 
-package Protos;
+package Protos.Ssl.Simulation;
 
 // Feedback from a robot
 message RobotFeedback

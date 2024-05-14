@@ -4,7 +4,7 @@ import "ssl-game-controller/ssl_gc_common.proto";
 import "ssl-simulation-protocol/ssl_simulation_config.proto";
 import "ssl-simulation-protocol/ssl_simulation_error.proto";
 
-package Protos;
+package Protos.Ssl.Simulation;
 
 // Teleport the ball to a new location and optionally set it to some velocity
 message TeleportBall
@@ -69,7 +69,7 @@ message TeleportRobot
 }
 
 // Control the simulation
-message SimulatorControl
+message Control
 {
     // Teleport the ball
     optional TeleportBall teleport_ball = 1;
@@ -80,17 +80,17 @@ message SimulatorControl
 }
 
 // Command from the connected client to the simulator
-message SimulatorCommand
+message Command
 {
     // Control the simulation
-    optional SimulatorControl control = 1;
+    optional Control control = 1;
     // Configure the simulation
-    optional SimulatorConfig config = 2;
+    optional Config config = 2;
 }
 
 // Response of the simulator to the connected client
-message SimulatorResponse
+message Response
 {
     // List of errors, like using unsupported features
-    repeated SimulatorError errors = 1;
+    repeated Error errors = 1;
 }
