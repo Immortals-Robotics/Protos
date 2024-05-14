@@ -2,8 +2,8 @@ syntax = "proto2";
 
 package Protos.GrSim;
 
-import "grsim/grSim_Commands.proto";
-import "grsim/grSim_Replacement.proto";
+import "grsim/grsim_commands.proto";
+import "grsim/grsim_replacement.proto";
 
 message Packet
 {

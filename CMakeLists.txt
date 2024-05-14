@@ -3,10 +3,10 @@ project(${CMAKE_PROJECT_NAME}-protos)
 find_package(Protobuf CONFIG REQUIRED)
 
 set(PROTO_FILES
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Commands.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Packet.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Replacement.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Robotstatus.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_commands.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_packet.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_replacement.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_robotstatus.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/command.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/common.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/debug.proto
