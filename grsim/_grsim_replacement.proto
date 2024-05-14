@@ -1,8 +1,8 @@
 syntax = "proto2";
 
-package Protos;
+package Protos.GrSim;
 
-message grSim_RobotReplacement
+message RobotReplacement
 {
     required double x          = 1;
     required double y          = 2;
@@ -12,7 +12,7 @@ message grSim_RobotReplacement
     optional bool   turnon     = 6;
 }
 
-message grSim_BallReplacement
+message BallReplacement
 {
     optional double x  = 1;
     optional double y  = 2;
@@ -20,8 +20,8 @@ message grSim_BallReplacement
     optional double vy = 4;
 }
 
-message grSim_Replacement
+message Replacement
 {
-    optional grSim_BallReplacement  ball   = 1;
-    repeated grSim_RobotReplacement robots = 2;
+    optional BallReplacement  ball   = 1;
+    repeated RobotReplacement robots = 2;
 }
