@@ -1,5 +1,6 @@
 syntax = "proto2";
 
+import "ssl-common/ssl_geometry.proto";
 import "ssl-game-controller/ssl_gc_game_event.proto";
 
 package Protos.Ssl.Gc;
@@ -179,12 +180,7 @@ message Referee
     // millimetres and correspond to SSL-Vision coordinates. These fields are
     // always either both present (in the case of a ball placement command) or
     // both absent (in the case of any other command).
-    message Point
-    {
-        required float x = 1;
-        required float y = 2;
-    }
-    optional Point designated_position = 9;
+    optional Vector2 designated_position = 9;
 
     // Information about the direction of play.
     // True, if the blue team will have it's goal on the positive x-axis of the ssl-vision coordinate system.
