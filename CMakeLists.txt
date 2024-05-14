@@ -13,9 +13,9 @@ set(PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/play_book.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/state.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_common.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/ssl-common/ssl_common.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/ssl-common/ssl_geometry.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_game_event.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_geometry.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon_team.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_referee_message.proto

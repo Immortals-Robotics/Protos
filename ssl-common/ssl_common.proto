@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package Protos.Ssl.Gc;
+package Protos.Ssl;
 
 // Team is either blue or yellow
 enum Team

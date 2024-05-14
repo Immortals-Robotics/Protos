@@ -1,7 +1,7 @@
 syntax = "proto2";
 
+import "ssl-common/ssl_common.proto";
 import "ssl-game-controller/ssl_gc_rcon.proto";
-import "ssl-game-controller/ssl_gc_common.proto";
 
 package Protos.Ssl.Gc;
 

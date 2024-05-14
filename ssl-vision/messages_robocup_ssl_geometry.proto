@@ -1,42 +1,35 @@
 syntax = "proto2";
 
-package Protos;
+import "ssl-common/ssl_geometry.proto";
 
-// A 2D float vector.
-message Vector2f
-{
-    // X-coordinate in mm
-    required float x = 1;
-    // Y-coordinate in mm
-    required float y = 2;
-}
+package Protos.Ssl.Vision;
 
 // Represents a field marking as a line segment represented by a start point p1,
 // and end point p2, and a line thickness. The start and end points are along
 // the center of the line, so the thickness of the line extends by thickness / 2
 // on either side of the line.
-message SSL_FieldLineSegment
+message FieldLineSegment
 {
     // Name of this field marking.
     required string name = 1;
     // Start point of the line segment.
-    required Vector2f p1 = 2;
+    required Vector2 p1 = 2;
     // End point of the line segment.
-    required Vector2f p2 = 3;
+    required Vector2 p2 = 3;
     // Thickness of the line segment.
     required float thickness = 4;
     // The type of this shape
-    optional SSL_FieldShapeType type = 5;
+    optional FieldShapeType type = 5;
 }
 
 // Represents a field marking as a circular arc segment represented by center point, a
 // start angle, an end angle, and an arc thickness.
-message SSL_FieldCircularArc
+message FieldCircularArc
 {
     // Name of this field marking.
     required string name = 1;
     // Center point of the circular arc.
-    required Vector2f center = 2;
+    required Vector2 center = 2;
     // Radius of the arc.
     required float radius = 3;
     // Start angle in counter-clockwise order.
@@ -46,10 +39,10 @@ message SSL_FieldCircularArc
     // Thickness of the arc.
     required float thickness = 6;
     // The type of this shape
-    optional SSL_FieldShapeType type = 7;
+    optional FieldShapeType type = 7;
 }
 
-message SSL_GeometryFieldSize
+message GeometryFieldSize
 {
     // Field length (distance between goal lines) in mm
     required int32 field_length = 1;
@@ -62,9 +55,9 @@ message SSL_GeometryFieldSize
     // Boundary width (distance from touch/goal line centers to boundary walls) in mm
     required int32 boundary_width = 5;
     // Generated line segments based on the other parameters
-    repeated SSL_FieldLineSegment field_lines = 6;
+    repeated FieldLineSegment field_lines = 6;
     // Generated circular arcs based on the other parameters
-    repeated SSL_FieldCircularArc field_arcs = 7;
+    repeated FieldCircularArc field_arcs = 7;
     // Depth of the penalty/defense area (measured between line centers) in mm
     optional int32 penalty_area_depth = 8;
     // Width of the penalty/defense area (measured between line centers) in mm
@@ -83,7 +76,7 @@ message SSL_GeometryFieldSize
     optional float max_robot_radius = 15;
 }
 
-message SSL_GeometryCameraCalibration
+message GeometryCameraCalibration
 {
     required uint32 camera_id               = 1;
     required float  focal_length            = 2;
@@ -110,7 +103,7 @@ message SSL_GeometryCameraCalibration
 // 2. Rolling
 // The full model is described in the TDP of ER-Force from 2016, which can be found here:
 // https://ssl.robocup.org/wp-content/uploads/2019/01/2016_ETDP_ER-Force.pdf
-message SSL_BallModelStraightTwoPhase
+message BallModelStraightTwoPhase
 {
     // Ball sliding acceleration [m/s^2] (should be negative)
     required double acc_slide = 1;
@@ -122,7 +115,7 @@ message SSL_BallModelStraightTwoPhase
 
 // Fixed-Loss model for chipped balls.
 // Uses fixed damping factors for xy and z direction per hop.
-message SSL_BallModelChipFixedLoss
+message BallModelChipFixedLoss
 {
     // Chip kick velocity damping factor in XY direction for the first hop
     required double damping_xy_first_hop = 1;
@@ -132,20 +125,20 @@ message SSL_BallModelChipFixedLoss
     required double damping_z = 3;
 }
 
-message SSL_GeometryModels
+message GeometryModels
 {
-    optional SSL_BallModelStraightTwoPhase straight_two_phase = 1;
-    optional SSL_BallModelChipFixedLoss    chip_fixed_loss    = 2;
+    optional BallModelStraightTwoPhase straight_two_phase = 1;
+    optional BallModelChipFixedLoss    chip_fixed_loss    = 2;
 }
 
-message SSL_GeometryData
+message GeometryData
 {
-    required SSL_GeometryFieldSize         field  = 1;
-    repeated SSL_GeometryCameraCalibration calib  = 2;
-    optional SSL_GeometryModels            models = 3;
+    required GeometryFieldSize         field  = 1;
+    repeated GeometryCameraCalibration calib  = 2;
+    optional GeometryModels            models = 3;
 }
 
-enum SSL_FieldShapeType
+enum FieldShapeType
 {
     Undefined                     = 0;
     CenterCircle                  = 1;
