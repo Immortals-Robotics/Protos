@@ -2,7 +2,7 @@ syntax = "proto2";
 
 import "ssl-game-controller/ssl_gc_game_event.proto";
 
-package Protos;
+package Protos.Ssl.Gc;
 
 // Each UDP packet contains one of these messages.
 message Referee

@@ -3,19 +3,19 @@ project(${CMAKE_PROJECT_NAME}-protos)
 find_package(Protobuf CONFIG REQUIRED)
 
 set(PROTO_FILES
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Commands.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Packet.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Replacement.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grSim_Robotstatus.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_commands.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_packet.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_replacement.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_robotstatus.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/command.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/common.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/debug.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/play_book.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/state.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_common.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/ssl-common/ssl_common.proto
+	${CMAKE_CURRENT_SOURCE_DIR}/ssl-common/ssl_geometry.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_game_event.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_geometry.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon_team.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_referee_message.proto
@@ -25,8 +25,6 @@ set(PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_robot_control.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_robot_feedback.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_synchronous.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/erforce/ssl_simulation_custom_erforce_realism.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/erforce/ssl_simulation_custom_erforce_robot_spec.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_detection.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_detection_tracked.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_geometry.proto

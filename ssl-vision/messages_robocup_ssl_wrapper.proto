@@ -2,10 +2,10 @@ syntax = "proto2";
 import "ssl-vision/messages_robocup_ssl_detection.proto";
 import "ssl-vision/messages_robocup_ssl_geometry.proto";
 
-package Protos;
+package Protos.Ssl.Vision;
 
-message SSL_WrapperPacket
+message WrapperPacket
 {
-    optional SSL_DetectionFrame detection = 1;
-    optional SSL_GeometryData   geometry  = 2;
+    optional DetectionFrame detection = 1;
+    optional GeometryData   geometry  = 2;
 }

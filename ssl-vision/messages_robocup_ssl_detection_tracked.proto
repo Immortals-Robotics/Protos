@@ -1,9 +1,9 @@
 syntax = "proto2";
 
-import "ssl-game-controller/ssl_gc_common.proto";
-import "ssl-game-controller/ssl_gc_geometry.proto";
+import "ssl-common/ssl_common.proto";
+import "ssl-common/ssl_geometry.proto";
 
-package Protos;
+package Protos.Ssl.Vision;
 
 // Default network address: 224.5.23.2:10010
 

@@ -1,13 +1,13 @@
 syntax = "proto2";
 
-package Protos;
+package Protos.GrSim;
 
-message Robots_Status
+message RobotsStatus
 {
-    repeated Robot_Status robots_status = 1;
+    repeated RobotStatus robots_status = 1;
 }
 
-message Robot_Status
+message RobotStatus
 {
     required int32 robot_id  = 1;
     required bool  infrared  = 2;

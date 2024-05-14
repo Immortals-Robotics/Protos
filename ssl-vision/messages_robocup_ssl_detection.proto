@@ -1,8 +1,8 @@
 syntax = "proto2";
 
-package Protos;
+package Protos.Ssl.Vision;
 
-message SSL_DetectionBall
+message DetectionBall
 {
     // Confidence in [0-1] of the detection
     required float  confidence = 1;
@@ -20,7 +20,7 @@ message SSL_DetectionBall
     required float pixel_y = 7;
 }
 
-message SSL_DetectionRobot
+message DetectionRobot
 {
     // Confidence in [0-1] of the detection
     required float confidence = 1;
@@ -40,7 +40,7 @@ message SSL_DetectionRobot
     optional float height = 8;
 }
 
-message SSL_DetectionFrame
+message DetectionFrame
 {
     // monotonously increasing frame number
     required uint32 frame_number = 1;
@@ -54,9 +54,9 @@ message SSL_DetectionFrame
     // Identifier of the camera
     required uint32 camera_id = 4;
     // Detected balls
-    repeated SSL_DetectionBall balls = 5;
+    repeated DetectionBall balls = 5;
     // Detected yellow robots
-    repeated SSL_DetectionRobot robots_yellow = 6;
+    repeated DetectionRobot robots_yellow = 6;
     // Detected blue robots
-    repeated SSL_DetectionRobot robots_blue = 7;
+    repeated DetectionRobot robots_blue = 7;
 }

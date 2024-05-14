@@ -1,9 +1,9 @@
 syntax = "proto2";
 
-import "ssl-game-controller/ssl_gc_common.proto";
-import "ssl-game-controller/ssl_gc_geometry.proto";
+import "ssl-common/ssl_common.proto";
+import "ssl-common/ssl_geometry.proto";
 
-package Protos;
+package Protos.Ssl.Gc;
 
 // GameEvent contains exactly one game event
 // Each game event has optional and required fields. The required fields are mandatory to process the event.

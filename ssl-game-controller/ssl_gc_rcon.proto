@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package Protos;
+package Protos.Ssl.Gc;
 
 // a reply that is sent by the controller for each request from teams or autoRefs
 message ControllerReply
