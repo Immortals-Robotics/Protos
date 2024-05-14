@@ -1,5 +1,4 @@
 syntax = "proto2";
-option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
 import "ssl-game-controller/ssl_gc_common.proto";
 import "ssl-vision/messages_robocup_ssl_geometry.proto";
@@ -8,7 +7,8 @@ import "google/protobuf/any.proto";
 package Protos;
 
 // Movement limits for a robot
-message RobotLimits {
+message RobotLimits
+{
     // Max absolute speed-up acceleration [m/s^2]
     optional float acc_speedup_absolute_max = 1;
     // Max angular speed-up acceleration [rad/s^2]
@@ -26,7 +26,8 @@ message RobotLimits {
 // Robot wheel angle configuration
 // all angles are relative to looking forward,
 // all wheels / angles are clockwise
-message RobotWheelAngles {
+message RobotWheelAngles
+{
     // Angle front right [rad]
     required float front_right = 1;
     // Angle back right [rad]
@@ -38,13 +39,14 @@ message RobotWheelAngles {
 }
 
 // Specs of a robot
-message RobotSpecs {
+message RobotSpecs
+{
     // Id of the robot
     required RobotId id = 1;
     // Robot radius [m]
-    optional float radius = 2 [default = 0.09];
+    optional float radius = 2 [ default = 0.09 ];
     // Robot height [m]
-    optional float height = 3 [default = 0.15];
+    optional float height = 3 [ default = 0.15 ];
     // Robot mass [kg]
     optional float mass = 4;
     // Max linear kick speed [m/s] (unset = unlimited)
@@ -61,13 +63,15 @@ message RobotSpecs {
     repeated google.protobuf.Any custom = 14;
 }
 
-message RealismConfig {
+message RealismConfig
+{
     // Custom config for specific simulators (the protobuf files are managed by the simulators)
     repeated google.protobuf.Any custom = 1;
 }
 
 // Change the simulator configuration
-message SimulatorConfig {
+message SimulatorConfig
+{
     // Update the geometry
     optional SSL_GeometryData geometry = 1;
     // Update the robot specs

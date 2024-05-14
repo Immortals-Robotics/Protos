@@ -1,14 +1,13 @@
 syntax = "proto2";
 
-option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/rcon";
-
 import "ssl-game-controller/ssl_gc_rcon.proto";
 import "ssl-game-controller/ssl_gc_common.proto";
 
 package Protos;
 
 // a registration that must be send by teams to the controller as the very first message
-message TeamRegistration {
+message TeamRegistration
+{
     // the exact team name as published by the game-controller
     required string team_name = 1;
     // signature can optionally be specified to enable secure communication
@@ -18,11 +17,13 @@ message TeamRegistration {
 }
 
 // wrapper for all messages from a team's computer to the controller
-message TeamToController {
+message TeamToController
+{
     // signature can optionally be specified to enable secure communication
     optional Signature signature = 1;
 
-    oneof msg {
+    oneof msg
+    {
         // request a new desired keeper id
         int32 desired_keeper = 2;
         // response to an advantage choice request
@@ -39,7 +40,8 @@ message TeamToController {
 // the choice is valid until another choice is received
 // if the team disconnects, the choice is reset to its default (STOP)
 // teams may either send their current choice continuously or only on change
-enum AdvantageChoice {
+enum AdvantageChoice
+{
     // stop the game
     STOP = 0;
     // keep the game running
@@ -47,11 +49,13 @@ enum AdvantageChoice {
 }
 
 // wrapper for all messages from controller to a team's computer
-message ControllerToTeam {
+message ControllerToTeam
+{
     // reserve obsolete field ids
     reserved 2;
-    
-    oneof msg {
+
+    oneof msg
+    {
         // a reply from the controller
         ControllerReply controller_reply = 1;
     }

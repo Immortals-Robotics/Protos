@@ -11,27 +11,14 @@ set(PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/common.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/debug.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/robot_feedback.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/play_book.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/immortals/state.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/immortals/vision_interface.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_autoref_ci.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_api.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_change.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_ci.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_common.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_engine.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_engine_config.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_game_event.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_geometry.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon_autoref.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon_remotecontrol.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon_team.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_referee_message.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_state.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-refbox/game_event.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-refbox/referee.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_config.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_control.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_error.proto
@@ -43,10 +30,7 @@ set(PROTO_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_detection.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_detection_tracked.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_geometry.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_geometry_legacy.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_refbox_log.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_wrapper.proto
-	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_wrapper_legacy.proto
 	${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_wrapper_tracked.proto)
 
 set(NANO_PROTO_FILES

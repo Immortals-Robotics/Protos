@@ -1,10 +1,10 @@
 syntax = "proto2";
-option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
 package Protos;
 
 // Full command for a single robot
-message RobotCommand {
+message RobotCommand
+{
     // Id of the robot
     required uint32 id = 1;
     // Movement command
@@ -12,14 +12,16 @@ message RobotCommand {
     // Absolute (3 dimensional) kick speed [m/s]
     optional float kick_speed = 3;
     // Kick angle [degree] (defaults to 0 degrees for a straight kick)
-    optional float kick_angle = 4 [default = 0];
+    optional float kick_angle = 4 [ default = 0 ];
     // Dribbler speed in rounds per minute [rpm]
     optional float dribbler_speed = 5;
 }
 
 // Wrapper for different kinds of movement commands
-message RobotMoveCommand {
-    oneof command {
+message RobotMoveCommand
+{
+    oneof command
+    {
         // Move with wheel velocities
         MoveWheelVelocity wheel_velocity = 1;
         // Move with local velocity
@@ -30,7 +32,8 @@ message RobotMoveCommand {
 }
 
 // Move robot with wheel velocities
-message MoveWheelVelocity {
+message MoveWheelVelocity
+{
     // Velocity [m/s] of front right wheel
     required float front_right = 1;
     // Velocity [m/s] of back right wheel
@@ -42,7 +45,8 @@ message MoveWheelVelocity {
 }
 
 // Move robot with local velocity
-message MoveLocalVelocity {
+message MoveLocalVelocity
+{
     // Velocity forward [m/s] (towards the dribbler)
     required float forward = 1;
     // Velocity to the left [m/s]
@@ -52,7 +56,8 @@ message MoveLocalVelocity {
 }
 
 // Move robot with global velocity
-message MoveGlobalVelocity {
+message MoveGlobalVelocity
+{
     // Velocity on x-axis of the field [m/s]
     required float x = 1;
     // Velocity on y-axis of the field [m/s]
@@ -62,7 +67,8 @@ message MoveGlobalVelocity {
 }
 
 // Command from the connected client to the simulator
-message RobotControl {
+message RobotControl
+{
     // Control the robots
     repeated RobotCommand robot_commands = 1;
 }

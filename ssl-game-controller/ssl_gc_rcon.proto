@@ -1,11 +1,10 @@
 syntax = "proto2";
 
-option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/rcon";
-
 package Protos;
 
 // a reply that is sent by the controller for each request from teams or autoRefs
-message ControllerReply {
+message ControllerReply
+{
     // status_code is an optional code that indicates the result of the last request
     optional StatusCode status_code = 1;
     // reason is an optional explanation of the status code
@@ -18,21 +17,24 @@ message ControllerReply {
     // verification indicates if the last request could be verified (secure communication)
     optional Verification verification = 4;
 
-    enum StatusCode {
+    enum StatusCode
+    {
         UNKNOWN_STATUS_CODE = 0;
-        OK = 1;
-        REJECTED = 2;
+        OK                  = 1;
+        REJECTED            = 2;
     }
 
-    enum Verification {
+    enum Verification
+    {
         UNKNOWN_VERIFICATION = 0;
-        VERIFIED = 1;
-        UNVERIFIED = 2;
+        VERIFIED             = 1;
+        UNVERIFIED           = 2;
     }
 }
 
-// Signature can be added to a request to let it be verfied by the controller
-message Signature {
+// Signature can be added to a request to let it be verified by the controller
+message Signature
+{
     // the token that was received with the last controller reply
     required string token = 1;
     // the PKCS1v15 signature of this message

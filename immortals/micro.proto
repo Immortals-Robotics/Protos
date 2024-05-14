@@ -6,10 +6,10 @@ message MikonaStatus
 {
     bool connected = 1;
 
-    bool charging = 2;
+    bool charging    = 2;
     bool discharging = 3;
 
-    bool done = 4;
+    bool done  = 4;
     bool fault = 5;
 
     float v_out = 6;
@@ -18,14 +18,14 @@ message MikonaStatus
 message MotorStatus
 {
     bool status = 1;
-    bool fault = 2;
+    bool fault  = 2;
 }
 
 message PowerStatus
 {
     float voltage = 1;
     float current = 2;
-    float power = 3;
+    float power   = 3;
 }
 
 message MicroStatus
@@ -36,7 +36,7 @@ message MicroStatus
     bool dip_switch_2 = 3;
     bool dip_switch_3 = 4;
     bool dip_switch_4 = 5;
-    
+
     bool button = 6;
 
     bool ballDetected = 7;
@@ -48,14 +48,14 @@ message MicroStatus
     MotorStatus motor_3 = 11;
     MotorStatus motor_4 = 12;
     MotorStatus motor_d = 13;
-    
-    PowerStatus power_5v = 14;
+
+    PowerStatus power_5v  = 14;
     PowerStatus power_24v = 15;
 }
 
 message MikonaCommand
 {
-    bool charge = 1;
+    bool charge    = 1;
     bool discharge = 2;
 
     uint32 kick_a = 3;
@@ -66,12 +66,12 @@ message LEDCommand
 {
     bool wifi_connected = 1;
     bool wifi_acitivity = 2;
-    bool fault = 3;
+    bool fault          = 3;
 }
 
 message MicroCommand
 {
     MikonaCommand mikona = 1;
-    LEDCommand led = 2;
-    bool buzzer = 3;
+    LEDCommand    led    = 2;
+    bool          buzzer = 3;
 }

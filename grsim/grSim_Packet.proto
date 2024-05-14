@@ -5,7 +5,8 @@ package Protos;
 import "grsim/grSim_Commands.proto";
 import "grsim/grSim_Replacement.proto";
 
-message grSim_Packet {
-    optional grSim_Commands commands = 1;
+message grSim_Packet
+{
+    optional grSim_Commands    commands    = 1;
     optional grSim_Replacement replacement = 2;
 }
