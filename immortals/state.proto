@@ -75,8 +75,8 @@ message RefereeState
 {
     fixed64 time = 1;
 
-    int32     state             = 10;
-    TeamColor color             = 11;
-    Vec2      place_ball_target = 12;
-    int32     opp_gk            = 13;
+    int32              state             = 10;
+    optional TeamColor color             = 11;
+    Vec2               place_ball_target = 12;
+    int32              opp_gk            = 13;
 }
