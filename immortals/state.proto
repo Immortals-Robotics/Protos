@@ -51,7 +51,8 @@ message RobotState
     Angle angle            = 5;
     Angle angular_velocity = 6;
 
-    SeenState seen_state = 7;
+    SeenState seen_state         = 7;
+    bool      out_for_substitute = 8;
 }
 
 message BallState
