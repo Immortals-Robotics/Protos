@@ -8,7 +8,7 @@ message Command
 {
     int32 vision_id = 1;
 
-    Vec3 motion = 2;
+    Vec2 motion = 2;
     bool halted = 3;
 
     Angle current_angle = 4;
