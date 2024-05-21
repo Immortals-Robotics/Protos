@@ -78,6 +78,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 	protobuf::libprotobuf)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD OFF)
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_WARNING_AS_ERROR OFF)
 
 target_precompile_headers(${PROJECT_NAME}
 	INTERFACE ${PROTO_HDRS})
