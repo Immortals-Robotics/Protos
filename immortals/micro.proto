@@ -65,7 +65,7 @@ message MikonaCommand
 message LEDCommand
 {
     bool wifi_connected = 1;
-    bool wifi_aciivity  = 2;
+    bool wifi_activity  = 2;
     bool fault          = 3;
 }
 
