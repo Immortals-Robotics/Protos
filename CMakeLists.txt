@@ -10,6 +10,8 @@ option(ENABLE_SANITIZERS "Enable address and undefined behavior sanitizers" OFF)
 
 project(immortals-protos)
 
+include(GNUInstallDirs)
+
 # Enable ASAN
 add_compile_options($<$<BOOL:${ENABLE_SANITIZERS}>:-fsanitize=address>)
 add_link_options($<$<BOOL:${ENABLE_SANITIZERS}>:-fsanitize=address>)
@@ -87,6 +89,7 @@ add_library(${PROJECT_NAME}
         ${PROTO_SRCS} ${PROTO_HDRS}
         ${PROTO_FILES})
 
+set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${PROTO_HDRS}")
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
@@ -94,3 +97,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 
 target_precompile_headers(${PROJECT_NAME}
         INTERFACE ${PROTO_HDRS})
+
+install(
+        TARGETS ${PROJECT_NAME}
+        EXPORT immortals)
