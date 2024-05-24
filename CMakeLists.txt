@@ -95,11 +95,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}"
 target_link_libraries(${PROJECT_NAME} PUBLIC
         protobuf::libprotobuf)
 
-target_precompile_headers(${PROJECT_NAME}
-        INTERFACE ${PROTO_HDRS})
-
 install(
         TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME})
 
-install(EXPORT ${PROJECT_NAME} FILE ${PROJECT_NAME}-targets.cmake NAMESPACE immortals::${PROJECT_NAME}:: DESTINATION share/${PROJECT_NAME})
+install(EXPORT ${PROJECT_NAME} FILE ${PROJECT_NAME}-targets.cmake NAMESPACE immortals:: DESTINATION share/${PROJECT_NAME})
