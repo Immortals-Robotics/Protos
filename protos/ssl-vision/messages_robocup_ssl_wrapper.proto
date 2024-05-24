@@ -1,6 +1,6 @@
 syntax = "proto2";
-import "ssl-vision/messages_robocup_ssl_detection.proto";
-import "ssl-vision/messages_robocup_ssl_geometry.proto";
+import "protos/ssl-vision/messages_robocup_ssl_detection.proto";
+import "protos/ssl-vision/messages_robocup_ssl_geometry.proto";
 
 package Protos.Ssl.Vision;
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "immortals/common.proto";
+import "protos/immortals/common.proto";
 
 package Protos.Immortals.Debug;
 

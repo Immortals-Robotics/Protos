@@ -1,9 +1,9 @@
 syntax = "proto2";
 
-import "ssl-vision/messages_robocup_ssl_detection.proto";
-import "ssl-simulation-protocol/ssl_simulation_robot_feedback.proto";
-import "ssl-simulation-protocol/ssl_simulation_robot_control.proto";
-import "ssl-simulation-protocol/ssl_simulation_control.proto";
+import "protos/ssl-vision/messages_robocup_ssl_detection.proto";
+import "protos/ssl-simulation-protocol/ssl_simulation_robot_feedback.proto";
+import "protos/ssl-simulation-protocol/ssl_simulation_robot_control.proto";
+import "protos/ssl-simulation-protocol/ssl_simulation_control.proto";
 
 package Protos.Ssl.Simulation;
 

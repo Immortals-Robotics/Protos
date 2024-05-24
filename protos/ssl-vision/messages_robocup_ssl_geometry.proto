@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-import "ssl-common/ssl_geometry.proto";
+import "protos/ssl-common/ssl_geometry.proto";
 
 package Protos.Ssl.Vision;
 

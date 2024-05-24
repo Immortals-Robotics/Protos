@@ -1,7 +1,7 @@
 syntax = "proto2";
 
 import "google/protobuf/any.proto";
-import "ssl-simulation-protocol/ssl_simulation_error.proto";
+import "protos/ssl-simulation-protocol/ssl_simulation_error.proto";
 
 package Protos.Ssl.Simulation;
 

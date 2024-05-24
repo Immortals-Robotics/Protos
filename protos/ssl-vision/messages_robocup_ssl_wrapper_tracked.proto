@@ -1,5 +1,5 @@
 syntax = "proto2";
-import "ssl-vision/messages_robocup_ssl_detection_tracked.proto";
+import "protos/ssl-vision/messages_robocup_ssl_detection_tracked.proto";
 
 package Protos.Ssl.Vision;
 

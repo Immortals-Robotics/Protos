@@ -28,42 +28,42 @@ endif ()
 find_package(Protobuf CONFIG REQUIRED)
 
 set(PROTO_FILES
-        ${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_commands.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_packet.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_replacement.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/grsim/grsim_robotstatus.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/immortals/command.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/immortals/common.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/immortals/debug.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/immortals/play_book.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/immortals/state.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-common/ssl_common.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-common/ssl_geometry.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_game_event.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_rcon_team.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-game-controller/ssl_gc_referee_message.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_config.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_control.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_error.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_robot_control.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_robot_feedback.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-simulation-protocol/ssl_simulation_synchronous.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_detection.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_detection_tracked.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_geometry.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_wrapper.proto
-        ${CMAKE_CURRENT_SOURCE_DIR}/ssl-vision/messages_robocup_ssl_wrapper_tracked.proto)
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/grsim/grsim_commands.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/grsim/grsim_packet.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/grsim/grsim_replacement.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/grsim/grsim_robotstatus.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/immortals/command.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/immortals/common.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/immortals/debug.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/immortals/micro.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/immortals/play_book.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/immortals/state.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-common/ssl_common.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-common/ssl_geometry.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-game-controller/ssl_gc_game_event.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-game-controller/ssl_gc_rcon.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-game-controller/ssl_gc_rcon_team.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-game-controller/ssl_gc_referee_message.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-simulation-protocol/ssl_simulation_config.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-simulation-protocol/ssl_simulation_control.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-simulation-protocol/ssl_simulation_error.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-simulation-protocol/ssl_simulation_robot_control.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-simulation-protocol/ssl_simulation_robot_feedback.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-simulation-protocol/ssl_simulation_synchronous.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-vision/messages_robocup_ssl_detection.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-vision/messages_robocup_ssl_detection_tracked.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-vision/messages_robocup_ssl_geometry.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-vision/messages_robocup_ssl_wrapper.proto
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/ssl-vision/messages_robocup_ssl_wrapper_tracked.proto)
 
 set(NANO_PROTO_FILES
-        ${CMAKE_CURRENT_SOURCE_DIR}/immortals/micro.proto)
+        ${CMAKE_CURRENT_SOURCE_DIR}/protos/immortals/micro.proto)
 
 set(PROTO_SRCS)
 set(PROTO_HDRS)
 
 set(PROTO_DEF_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-set(PROTO_GEN_BASE_DIR ${CMAKE_CURRENT_BINARY_DIR}/proto-gen)
+set(PROTO_GEN_BASE_DIR ${CMAKE_CURRENT_BINARY_DIR}/generated)
 
 foreach (file ${PROTO_FILES})
     get_filename_component(FILE_ABS ${file} ABSOLUTE) # Full path to file
@@ -104,8 +104,8 @@ install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}_target
         LIBRARY DESTINATION lib)
 
-install(DIRECTORY  ${PROTO_GEN_BASE_DIR}/
-        DESTINATION include/protos
+install(DIRECTORY ${PROTO_GEN_BASE_DIR}/
+        DESTINATION include
         FILES_MATCHING
         PATTERN "*.h"
 )

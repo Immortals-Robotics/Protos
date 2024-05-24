@@ -1,8 +1,8 @@
 syntax = "proto2";
 
-import "ssl-common/ssl_common.proto";
-import "ssl-simulation-protocol/ssl_simulation_config.proto";
-import "ssl-simulation-protocol/ssl_simulation_error.proto";
+import "protos/ssl-common/ssl_common.proto";
+import "protos/ssl-simulation-protocol/ssl_simulation_config.proto";
+import "protos/ssl-simulation-protocol/ssl_simulation_error.proto";
 
 package Protos.Ssl.Simulation;
 
