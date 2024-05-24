@@ -90,7 +90,7 @@ add_library(${PROJECT_NAME}
         ${PROTO_FILES})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${PROTO_HDRS}")
-target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
+target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
         protobuf::libprotobuf)
