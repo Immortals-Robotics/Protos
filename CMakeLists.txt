@@ -105,6 +105,17 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 
 install(
         TARGETS ${PROJECT_NAME}
-        EXPORT ${PROJECT_NAME})
+        EXPORT protos)
 
-install(EXPORT ${PROJECT_NAME} FILE ${PROJECT_NAME}-targets.cmake NAMESPACE immortals:: DESTINATION share/${PROJECT_NAME})
+include(CMakePackageConfigHelpers)
+configure_package_config_file(${PROJECT_NAME}-config.cmake.in ${PROJECT_NAME}-config.cmake INSTALL_DESTINATION share/${PROJECT_NAME})
+
+install(
+        FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
+        DESTINATION share/${PROJECT_NAME})
+
+install(
+        EXPORT protos
+        NAMESPACE immortals::
+        FILE ${PROJECT_NAME}-targets.cmake
+        DESTINATION share/${PROJECT_NAME})
