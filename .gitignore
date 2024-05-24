@@ -1,1 +1,3 @@
-*.pb.*
+.idea
+out
+.DS_Store
