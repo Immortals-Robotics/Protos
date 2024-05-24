@@ -6,9 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(TRACE_BUILD_TIME "Use -ftime-trace to generate build time trace" OFF)
 option(ENABLE_SANITIZERS "Enable address and undefined behavior sanitizers" OFF)
 
-set(PACKAGE_NAME "immortals-protos")
-
 project(protos)
+set(PACKAGE_NAME immortals-${PROJECT_NAME})
 
 set(CMAKE_DEBUG_POSTFIX d)
 
@@ -64,7 +63,7 @@ set(PROTO_SRCS)
 set(PROTO_HDRS)
 
 set(PROTO_DEF_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-set(PROTO_GEN_BASE_DIR ${CMAKE_CURRENT_BINARY_DIR})
+set(PROTO_GEN_BASE_DIR ${CMAKE_CURRENT_BINARY_DIR}/proto-gen)
 
 foreach (file ${PROTO_FILES})
     get_filename_component(FILE_ABS ${file} ABSOLUTE) # Full path to file
@@ -96,7 +95,7 @@ add_library(${PROJECT_NAME}
         ${PROTO_FILES})
 add_library(immortals::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
+target_include_directories(${PROJECT_NAME} PRIVATE "${PROTO_GEN_BASE_DIR}")
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
         protobuf::libprotobuf)
@@ -105,8 +104,10 @@ install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}_target
         LIBRARY DESTINATION lib)
 
-install(FILES ${PROTO_HDRS}
+install(DIRECTORY  ${PROTO_GEN_BASE_DIR}/
         DESTINATION include/protos
+        FILES_MATCHING
+        PATTERN "*.h"
 )
 
 include(CMakePackageConfigHelpers)
