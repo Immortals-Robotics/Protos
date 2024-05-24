@@ -100,4 +100,6 @@ target_precompile_headers(${PROJECT_NAME}
 
 install(
         TARGETS ${PROJECT_NAME}
-        EXPORT immortals)
+        EXPORT ${PROJECT_NAME})
+
+install(EXPORT ${PROJECT_NAME} FILE ${PROJECT_NAME}-targets.cmake NAMESPACE immortals::${PROJECT_NAME}:: DESTINATION share/${PROJECT_NAME})
