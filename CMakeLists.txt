@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(TRACE_BUILD_TIME "Use -ftime-trace to generate build time trace" OFF)
 option(ENABLE_SANITIZERS "Enable address and undefined behavior sanitizers" OFF)
 
+set(PACKAGE_NAME "immortals-protos")
+
 project(protos)
 
 set(CMAKE_DEBUG_POSTFIX d)
@@ -108,12 +110,12 @@ install(FILES ${PROTO_HDRS}
 )
 
 include(CMakePackageConfigHelpers)
-configure_package_config_file(${PROJECT_NAME}-config.cmake.in ${PROJECT_NAME}-config.cmake INSTALL_DESTINATION share/${PROJECT_NAME})
+configure_package_config_file(${PACKAGE_NAME}-config.cmake.in ${PACKAGE_NAME}-config.cmake INSTALL_DESTINATION share/${PACKAGE_NAME})
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
-        DESTINATION share/${PROJECT_NAME})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PACKAGE_NAME}-config.cmake
+        DESTINATION share/${PACKAGE_NAME})
 
 install(EXPORT ${PROJECT_NAME}_target
         NAMESPACE immortals::
-        FILE ${PROJECT_NAME}-targets.cmake
-        DESTINATION share/${PROJECT_NAME})
+        FILE ${PACKAGE_NAME}-targets.cmake
+        DESTINATION share/${PACKAGE_NAME})
