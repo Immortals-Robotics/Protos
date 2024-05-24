@@ -2,26 +2,22 @@ cmake_minimum_required(VERSION 3.25)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_C_STANDARD_REQUIRED ON)
 
 option(TRACE_BUILD_TIME "Use -ftime-trace to generate build time trace" OFF)
 option(ENABLE_SANITIZERS "Enable address and undefined behavior sanitizers" OFF)
 
-project(immortals-protos)
+project(protos)
 
 set(CMAKE_DEBUG_POSTFIX d)
 
-include(GNUInstallDirs)
-
 # Enable ASAN
-add_compile_options($<$<OR:$<BOOL:${ENABLE_SANITIZERS}>,$<CONFIG:Debug>>:-fsanitize=address>)
-add_link_options($<$<OR:$<BOOL:${ENABLE_SANITIZERS}>,$<CONFIG:Debug>>:-fsanitize=address>)
+add_compile_options($<$<BOOL:${ENABLE_SANITIZERS}>:-fsanitize=address>)
+add_link_options($<$<BOOL:${ENABLE_SANITIZERS}>:-fsanitize=address>)
 
 # undefined behavior sanitizer is not available on MSVC
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    add_compile_options("$<$<OR:$<BOOL:${ENABLE_SANITIZERS}>,$<CONFIG:Debug>>:-fno-omit-frame-pointer;-fsanitize=undefined>")
-    add_link_options("$<$<OR:$<BOOL:${ENABLE_SANITIZERS}>,$<CONFIG:Debug>>:-fno-omit-frame-pointer;-fsanitize=undefined>")
+    add_compile_options("$<$<BOOL:${ENABLE_SANITIZERS}>:-fno-omit-frame-pointer;-fsanitize=undefined>")
+    add_link_options("$<$<BOOL:${ENABLE_SANITIZERS}>:-fno-omit-frame-pointer;-fsanitize=undefined>")
 endif ()
 
 if (${TRACE_BUILD_TIME})
@@ -96,26 +92,28 @@ endforeach ()
 add_library(${PROJECT_NAME}
         ${PROTO_SRCS} ${PROTO_HDRS}
         ${PROTO_FILES})
+add_library(immortals::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${PROTO_HDRS}")
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
         protobuf::libprotobuf)
 
-install(
-        TARGETS ${PROJECT_NAME}
-        EXPORT protos)
+install(TARGETS ${PROJECT_NAME}
+        EXPORT ${PROJECT_NAME}_target
+        LIBRARY DESTINATION lib)
+
+install(FILES ${PROTO_HDRS}
+        DESTINATION include/protos
+)
 
 include(CMakePackageConfigHelpers)
 configure_package_config_file(${PROJECT_NAME}-config.cmake.in ${PROJECT_NAME}-config.cmake INSTALL_DESTINATION share/${PROJECT_NAME})
 
-install(
-        FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
         DESTINATION share/${PROJECT_NAME})
 
-install(
-        EXPORT protos
+install(EXPORT ${PROJECT_NAME}_target
         NAMESPACE immortals::
         FILE ${PROJECT_NAME}-targets.cmake
         DESTINATION share/${PROJECT_NAME})
