@@ -51,6 +51,12 @@ message Log
     string text = 10;
 }
 
+message ExecutionTime
+{
+    fixed64 interval = 1;
+    fixed64 duration = 2;
+}
+
 message Wrapper
 {
     fixed64 time = 1;
@@ -59,4 +65,6 @@ message Wrapper
     repeated Log  log  = 11;
 
     map<int32, string> strings = 12;
+
+    map<string, ExecutionTime> execution_times = 13;
 }
