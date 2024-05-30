@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(TRACE_BUILD_TIME "Use -ftime-trace to generate build time trace" OFF)
 option(ENABLE_SANITIZERS "Enable address and undefined behavior sanitizers" OFF)
 
-project(protos)
+project(protos CXX)
 set(PACKAGE_NAME immortals-${PROJECT_NAME})
 
 set(CMAKE_DEBUG_POSTFIX d)
