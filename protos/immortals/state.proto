@@ -17,7 +17,7 @@ enum TeamColor
     Yellow = 1;
 }
 
-message RawDetection
+message RawFrame
 {
     uint32 camera_id    = 1;
     uint32 frame_number = 2;
@@ -25,13 +25,13 @@ message RawDetection
     fixed64 t_capture        = 3;
     fixed64 t_sent           = 4;
     fixed64 t_capture_camera = 5;
-
-    float confidence = 6;
 }
 
 message RawRobotState
 {
-    RawDetection detection = 1;
+    // index into the frames field of RawWorldState
+    uint32 frame_idx  = 1;
+    float  confidence = 2;
 
     int32     id    = 10;
     TeamColor color = 11;
@@ -46,7 +46,9 @@ message RawRobotState
 
 message RawBallState
 {
-    RawDetection detection = 1;
+    // index into the frames field of RawWorldState
+    uint32 frame_idx  = 1;
+    float  confidence = 2;
 
     Vec3 position       = 10;
     Vec2 pixel_position = 11;
@@ -56,7 +58,8 @@ message RawBallState
 
 message RawWorldState
 {
-    fixed64 time = 1;
+    fixed64           time   = 1;
+    repeated RawFrame frames = 2;
 
     repeated RawBallState  balls         = 10;
     repeated RawRobotState yellow_robots = 11;
