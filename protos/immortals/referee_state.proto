@@ -118,14 +118,18 @@ message State
     Stage   stage           = 11;
     fixed64 stage_time_left = 12;
 
-    GameState state = 13;
-    bool      ready = 14;
-    TeamColor color = 15;
+    GameState state          = 13;
+    bool      ready          = 14;
+    TeamColor color          = 15;
+    fixed64   time_remaining = 16;
 
-    Command last_command = 16;
+    Command last_command = 17;
 
-    Vec2 designated_position = 17;
+    Vec2 designated_position = 18;
 
-    TeamInfo blue_info   = 18;
-    TeamInfo yellow_info = 19;
+    TeamInfo blue_info   = 19;
+    TeamInfo yellow_info = 20;
+
+    TeamSide our_side       = 21;
+    string   status_message = 22;
 }

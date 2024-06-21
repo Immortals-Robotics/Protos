@@ -68,3 +68,9 @@ enum TeamColor
     Blue   = 0;
     Yellow = 1;
 }
+
+enum TeamSide
+{
+    Left  = 0;
+    Right = 1;
+}
