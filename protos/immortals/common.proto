@@ -62,3 +62,9 @@ message Color
     float b = 3;
     float a = 4;
 }
+
+enum TeamColor
+{
+    Blue   = 0;
+    Yellow = 1;
+}

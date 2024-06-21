@@ -11,12 +11,6 @@ enum SeenState
     Seen          = 2;
 }
 
-enum TeamColor
-{
-    Blue   = 0;
-    Yellow = 1;
-}
-
 message RawFrame
 {
     uint32 camera_id    = 1;
@@ -96,14 +90,4 @@ message WorldState
     BallState           ball      = 10;
     repeated RobotState own_robot = 11;
     repeated RobotState opp_robot = 12;
-}
-
-message RefereeState
-{
-    fixed64 time = 1;
-
-    int32              state             = 10;
-    optional TeamColor color             = 11;
-    Vec2               place_ball_target = 12;
-    int32              opp_gk            = 13;
 }
