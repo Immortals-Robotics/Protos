@@ -6,88 +6,126 @@ package Protos.Immortals.Referee;
 
 enum MatchType
 {
-    Unknown          = 0;
-    GroupPhase       = 1;
-    EliminationPhase = 2;
-    Friendly         = 3;
+  MatchTypeUnknown = 0;
+  GroupPhase = 1;
+  EliminationPhase = 2;
+  Friendly = 3;
 }
 
 enum Stage
 {
-    NormalFirstHalfPre   = 0;
-    NormalFirstHalf      = 1;
-    NormalHalfTime       = 2;
-    NormalSecondHalfPre  = 3;
-    NormalSecondHalf     = 4;
-    ExtraTimeBreak       = 5;
-    ExtraFirstHalfPre    = 6;
-    ExtraFirstHalf       = 7;
-    ExtraHalfTime        = 8;
-    ExtraSecondHalfPre   = 9;
-    ExtraSecondHalf      = 10;
-    PenaltyShootoutBreak = 11;
-    PenaltyShootout      = 12;
-    PostGame             = 13;
+  NormalFirstHalfPre = 0;
+  NormalFirstHalf = 1;
+  NormalHalfTime = 2;
+  NormalSecondHalfPre = 3;
+  NormalSecondHalf = 4;
+  ExtraTimeBreak = 5;
+  ExtraFirstHalfPre = 6;
+  ExtraFirstHalf = 7;
+  ExtraHalfTime = 8;
+  ExtraSecondHalfPre = 9;
+  ExtraSecondHalf = 10;
+  PenaltyShootoutBreak = 11;
+  PenaltyShootout = 12;
+  PostGame = 13;
 
-    None = -1;
+  StageUnknown = -1;
 }
 
 message TeamInfo
 {
-    string name = 1;
+  string name = 1;
 
-    uint32 score = 2;
+  uint32 score = 2;
 
-    uint32 foul_counter = 3;
+  uint32 foul_counter = 3;
 
-    uint32           red_cards              = 4;
-    uint32           yellow_cards           = 5;
-    repeated fixed64 yellow_cards_time_left = 6;
+  uint32           red_cards = 4;
+  uint32           yellow_cards = 5;
+  repeated fixed64 yellow_cards_time_left = 6;
 
-    uint32 max_allowed_robots = 7;
+  uint32 max_allowed_robots = 7;
 
-    uint32 ball_placement_failures         = 8;
-    bool   ball_placement_failures_reached = 9;
-    bool   can_place_ball                  = 10;
+  uint32 ball_placement_failures = 8;
+  bool   ball_placement_failures_reached = 9;
+  bool   can_place_ball = 10;
 
-    uint32  timeouts_left     = 11;
-    fixed64 timeout_time_left = 12;
+  uint32  timeouts_left = 11;
+  fixed64 timeout_time_left = 12;
 
-    uint32 gk_id = 13;
+  uint32 gk_id = 13;
 
-    bool   substitution_intent    = 14;
-    bool   substitution_allowed   = 15;
-    uint32 substitutions_left     = 16;
-    uint32 substitution_time_left = 17;
+  bool   substitution_intent = 14;
+  bool   substitution_allowed = 15;
+  uint32 substitutions_left = 16;
+  uint32 substitution_time_left = 17;
 }
 
 message Command
 {
-    uint32  id   = 1;
-    fixed64 time = 2;
+  enum Type
+  {
+    Halt = 0;
+    Stop = 1;
+    NormalStart = 2;
+    ForceStart = 3;
+    PrepareKickoffYellow = 4;
+    PrepareKickoffBlue = 5;
+    PreparePenaltyYellow = 6;
+    PreparePenaltyBlue = 7;
+    DirectFreeYellow = 8;
+    DirectFreeBlue = 9;
+    TimeoutYellow = 12;
+    TimeoutBlue = 13;
+    BallPlacementYellow = 16;
+    BallPlacementBlue = 17;
 
-    uint32             type  = 3;
-    optional TeamColor color = 4;
+    TypeNone = -1;
+  };
+
+  uint32  id = 1;
+
+  fixed64 time_issued = 2;
+  fixed64 time_sent = 3;
+
+  string source_uuid = 4;
+
+  Type type = 5;
+  Type next = 6;
 }
+
+// https://robocup-ssl.github.io/ssl-rules/sslrules.html#_game_states
+enum GameState
+{
+  GameStateNone = 0;
+  Halt = 1;
+  Timeout = 2;
+  Stop = 3;
+  BallPlacement = 4;
+  Kickoff = 5;
+  Penalty = 6;
+  FreeKick = 7;
+  Running = 8;
+};
 
 message State
 {
-    // when this state was sent on our side
-    fixed64 time_sent = 1;
-    // when this state was sent from game controller
-    fixed64 time_gc_sent = 2;
+  // when transitioned to this state
+  fixed64 time = 1;
 
-    string source_uuid = 3;
+  MatchType match_type = 10;
 
-    MatchType match_type = 10;
+  Stage   stage = 11;
+  fixed64 stage_time_left = 12;
 
-    Stage   stage           = 11;
-    fixed64 stage_time_left = 12;
+  GameState state = 13;
+  bool ready = 14;
+  TeamColor color = 15;
 
-    Command command = 13;
+  Command last_command = 16;
 
-    Vec2 place_ball_target = 14;
+  Vec2 designated_position = 17;
 
-    TeamInfo blue_info   = 15;
-    TeamInfo yellow_info = 16;
+  TeamInfo blue_info = 18;
+  TeamInfo yellow_info = 19;
 }
