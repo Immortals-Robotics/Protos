@@ -55,8 +55,10 @@ message SSL_GeometryFieldSize {
   required int32 goal_width = 3;
   // Goal depth (distance from outer goal line edge to inner goal back) in mm
   required int32 goal_depth = 4;
-  // Boundary width (distance from touch/goal line centers to boundary walls) in mm
+  // Boundary width (distance from touch line centers to boundary walls) in mm
   required int32 boundary_width = 5;
+  // Boundary width at the goal lines (distance from goal line centers to boundary walls) in mm
+  optional int32 boundary_width_goal_line = 16;
   // Generated line segments based on the other parameters 
   repeated SSL_FieldLineSegment field_lines = 6;
   // Generated circular arcs based on the other parameters
@@ -77,6 +79,8 @@ message SSL_GeometryFieldSize {
   optional float ball_radius = 14;
   // Max allowed robot radius in mm (note that this is a float type to represent sub-mm precision)
   optional float max_robot_radius = 15;
+  // Width of the goal substitution area in mm
+  optional int32 goal_substitution_area_width = 17;
 }
 
 message SSL_GeometryCameraCalibration {
